@@ -1,12 +1,16 @@
 <template>
     <div class="navibar">
         <router-link class="fti-logo" to="/">
-            <img src="@/assets/logo.webp" alt="">
+            <img src="@/assets/logo.png" alt="">
         </router-link>
         <div class="content">
-            <router-link to="/" :class="'btn '+navbar_class(0)">Home</router-link>
-            <router-link to="/" :class="'btn '+navbar_class(1)">Lowongan Pekerjaan</router-link>
-            <router-link to="/" :class="'btn '+navbar_class(2)">Untar Career</router-link>
+            <router-link to="/home" :class="'btn '+navbar_class(0)" @click.native="active_page = 0">HOME</router-link>
+            <router-link to="/" :class="'btn '+navbar_class(1)" @click.native="active_page = 1">LOWONGAN PEKERJAAN</router-link>
+            <a href="https://career.untar.ac.id/index.php/ind" :class="'btn '">UNTAR CAREER</a>
+            <router-link to="/" :class="'btn '+navbar_class(2)" @click.native="active_page = 2">
+            <b-icon icon="person-fill"></b-icon>
+            LOGIN
+            </router-link>
         </div>
     </div>
 </template>
@@ -30,6 +34,19 @@ export default {
       }
     }
   },
+  created() {
+    switch (this.$route.path) {
+      case '/home':
+        this.active_page = 0
+            break;
+      case '/lowongan':
+        this.active_page = 1
+        break;
+      case '/login':
+        this.active_page = 2
+        break;
+    }
+  }
 }
 </script>
 
@@ -44,14 +61,18 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
-    font-family: "Bree Serif";
-    font-size: 1.2rem;
-    background-image: url("../assets/backgroundnav.jpg");
+    background-image: linear-gradient( rgb(255, 235, 205, 0.3),rgb(255, 235, 205, 0.3)), url("../assets/backgroundnav.jpg") ;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100vw;
-    img {
-        height: 5vh;
+    .fti-logo{
+      padding: 10px;
+      &:hover{
+        background-color: rgb(255, 235, 205, 0.1);
+      }
+      img {
+          height: 90px;
+      }
     }
 
     .content {
@@ -59,9 +80,11 @@ export default {
         flex-direction: row;
         margin: auto 0;
         .btn {
-            margin: 0 10px;
+            margin: 0 4px;
             box-shadow: none;
             color: black;
+            font-family: "Bree Serif";
+            font-size: 1.2rem;
             &.active {
                 color: violet;
                 &::after {
