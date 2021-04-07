@@ -27,7 +27,7 @@ export default {
 
   .page-container {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       position: relative;
       margin: 0 auto;
       width: 100vw;
@@ -37,12 +37,12 @@ export default {
       right: 0;
       bottom: 0;
       .body-container{
-        position: absolute;
+        //position: absolute;
         z-index: 99;
         margin-top: 90px;
         display: flex;
         align-items: center;
-        height: calc(100% - 90px);
+        height: calc(100% - 40px);
         width: 100%;
       }
   }

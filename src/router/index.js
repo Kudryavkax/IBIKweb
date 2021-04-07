@@ -14,6 +14,13 @@ const routes = [
         {
             path: 'home',
             component:() => import("../views/Home/Home"),
+        },{
+            path: 'lowongan',
+            component: () => import('../views/Home/Lowongan'),
+        },
+        {
+            path: 'login',
+            component: () => import('../views/Home/Login'),
         },]
     }
 ]
