@@ -14,6 +14,7 @@
             </router-link>
         </div>
       </div>
+      <!--
       <div :class="'information'+navbar_class(0)">
         <div class="ibik mx-5">
           <h1>Inkubator Bisnis dan Kerjasama</h1>
@@ -21,6 +22,7 @@
           <p>Website IBIK memberikan informasi mengenai kerjasama antara Fakultas Teknologi Informasi(FTI) UNTAR dan perusahaan, mencakup informasi mengenai kegiatan seperti magang, seminar, dan lowongan kerja yang dibuka atau diadakan oleh perusahaan yang bekerja sama dengan FTI UNTAR</p>
         </div>
       </div>
+      -->
     </div>
 </template>
 
@@ -67,7 +69,7 @@ export default {
   color: black;
   width: 100vw;
   z-index: 99;
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   background-image: linear-gradient( rgb(255, 235, 205, 0.3),rgb(255, 235, 205, 0.3)), url("../assets/backgroundnav.jpg") ;

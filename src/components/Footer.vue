@@ -37,7 +37,7 @@ export default {
     flex-direction: row;
     width: 100%;
     z-index: 99;
-    position: fixed;
+    position: relative;
     bottom: 0;
     left: 0;
     background-color: #efe4f5;
