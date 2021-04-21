@@ -17,7 +17,42 @@
             </div>
             <div class="insta">
                 <b-icon class="m-2" icon="instagram"></b-icon>
-                <p class="my-1">@IBIKFTI</p>
+                <p class="word">@IBIKFTI</p>
+            </div>
+            <div class="contactus">
+                <b-button pill variant="outline-secondary" id="contactus-btn" @click="$bvModal.show('contactus-modal')">Contact Us</b-button>
+                <b-modal id="contactus-modal" hide-footer>
+                    <template #modal-title>
+                        Contact us
+                    </template>
+                    <b-container fluid>
+                        <b-row class="mt-3">
+                            <b-col sm="3">
+                            <label for="input-nama">Nama:</label>
+                            </b-col>
+                            <b-col>
+                            <b-form-input id="input-nama"></b-form-input>
+                            </b-col>
+                        </b-row>
+                        <b-row class="mt-3">
+                            <b-col sm="3">
+                            <label for="input-email">Email:</label>
+                            </b-col>
+                            <b-col>
+                            <b-form-input id="input-email" type="email"></b-form-input>
+                            </b-col>
+                        </b-row>
+                        <b-row class="mt-3">
+                            <b-col sm="3">
+                            <label for="input-perihal">Perihal:</label>
+                            </b-col>
+                            <b-col>
+                            <b-form-textarea v-model="value" debounce="500" rows="7" max-rows="10"></b-form-textarea>
+                            </b-col>
+                        </b-row>
+                    </b-container>
+                    <b-button class="mt-3" block @click="$bvModal.hide('contactus-modal')">Send</b-button>
+                </b-modal>
             </div>
         </div>
     </div>
@@ -67,6 +102,9 @@ export default {
             .insta{
                 display: flex;
                 flex-direction: row;
+                .word{
+                    margin-top: 5px;
+                }
             }
         }
     }

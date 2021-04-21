@@ -3,9 +3,7 @@
       <div class="page-container">
           <navbar></navbar>
           <router-view class="body-container"></router-view>
-          <div class="foot-placeholder">
           <footing></footing>
-          </div>
       </div>
   </div>
 </template>
@@ -43,11 +41,7 @@ export default {
       .body-container{
         background-color: rgb(245, 242, 228);
         position: relative;
-        z-index: 98;
         margin-top: 110px;
-        display: flex;
-        align-items: center;
-        width: 100%;
       }
   }
 }

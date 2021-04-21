@@ -11,13 +11,12 @@
           <h3>Pengumuman</h3>
           <hr size="6" width="100px" align="left" color="Black">
           <b-list-group>
-            <b-list-group-item class="isi" to="/lowongan">
+            <b-list-group-item class="isi" to="/Pengumuman">
               <a class="title">Webinar IDStar "Moving towards Society 5.0"</a>
               <a class="date">31 Oktober 2020</a></b-list-group-item>
             <b-list-group-item class="isi" to="">
               <a class="title">Virtual Campus Tour ruparupa.com</a>
-              <a class="date">31 Oktober 2020</a>
-            </b-list-group-item>
+              <a class="date">31 Oktober 2020</a></b-list-group-item>
             <b-list-group-item class="isi" to="">
               <a class="title">Webinar BCA "Beyond the Foundation of ITBCA Services"</a>
               <a class="date">15 Oktober 2020</a></b-list-group-item>
@@ -70,16 +69,16 @@ export default {
         fields: ['JudulLowongan', 'NamaPerusahaan', 'DurasiInternship'],
         items: [
           { JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INSTERNSHIP', 
-            NamaPerusahaan: 'PT Dynamics Inovasi Splusindo', 
+            NamaPerusahaan: 'PT Dynamics Inovasi Solusindo', 
             DurasiInternship: '12 Bulan Full Time' },
           { JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INSTERNSHIP', 
-            NamaPerusahaan: 'PT Dynamics Inovasi Splusindo', 
+            NamaPerusahaan: 'PT Dynamics Inovasi Solusindo', 
             DurasiInternship: '12 Bulan Full Time' },
           { JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INSTERNSHIP', 
-            NamaPerusahaan: 'PT Dynamics Inovasi Splusindo', 
+            NamaPerusahaan: 'PT Dynamics Inovasi Solusindo', 
             DurasiInternship: '12 Bulan Full Time' },
           { JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INSTERNSHIP', 
-            NamaPerusahaan: 'PT Dynamics Inovasi Splusindo', 
+            NamaPerusahaan: 'PT Dynamics Inovasi Solusindo', 
             DurasiInternship: '12 Bulan Full Time' },
         ],
       }
@@ -94,7 +93,7 @@ export default {
   position: relative;
   .ibik{
     text-align: center;
-    padding: 0 10%;
+    padding: 20px 10%;
     background: linear-gradient( rgba(230, 194, 139, 0.3),rgb(255, 235, 205, 0.3)) ;
   }
   .Pengumuman{
@@ -102,9 +101,9 @@ export default {
     flex-direction: row;
     background-color: white;
     justify-content: space-between;
-    padding: 50px 5%;
+    padding: 10vh 5%;
     width: 100%;
-    height: 60%;
+    height: 90vh;
     .isi{
       display: flex;
       flex-direction: row;
@@ -124,10 +123,10 @@ export default {
     .carousel{
       height: 45vh;
       width: 100%;
-      padding: 0 20px 0 10px;
+      padding: 0 10px;
       background:linear-gradient(#ffffff,#ebe6bf) ;
       .carousel-item img {
-        height:45vh ;
+        height:44vh ;
         width: auto;
         object-fit: contain;
       }
@@ -143,8 +142,9 @@ export default {
       text-align: center;
     }
     .tablelowongan{
+      height: 80vh;
       background-color: white;
-      Padding: 20px 5%;
+      Padding: 10vh 5%;
     }
   }
 }

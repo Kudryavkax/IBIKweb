@@ -1,17 +1,33 @@
 <template>
-    <div class="login">
+    <div class="register">
         <div class="title">
-            <h2>Login</h2>
+            <h2>Register Akun</h2>
             <hr size="6" width="100px" align="center" color="Black">
         </div>
         <div class="input">
             <b-container fluid>
                 <b-row class="mt-3">
                     <b-col sm="3">
-                    <label for="input-username">Username:</label>
+                    <label for="input-username">Username (NPM):</label>
                     </b-col>
                     <b-col>
                     <b-form-input id="input-username"></b-form-input>
+                    </b-col>
+                </b-row>
+                <b-row class="mt-3">
+                    <b-col sm="3">
+                    <label for="input-nama">Nama:</label>
+                    </b-col>
+                    <b-col>
+                    <b-form-input id="input-nama"></b-form-input>
+                    </b-col>
+                </b-row>
+                <b-row class="mt-3">
+                    <b-col sm="3">
+                    <label for="input-email">Email:</label>
+                    </b-col>
+                    <b-col>
+                    <b-form-input id="input-email"></b-form-input>
                     </b-col>
                 </b-row>
                 <b-row class="mt-3">
@@ -22,20 +38,25 @@
                     <b-form-input id="input-password" type="password"></b-form-input>
                     </b-col>
                 </b-row>
+                <b-row class="mt-3">
+                    <b-col sm="3">
+                    <label for="input-upassword">Ulang Password:</label>
+                    </b-col>
+                    <b-col>
+                    <b-form-input id="input-upassword" type="password"></b-form-input>
+                    </b-col>
+                </b-row>
             </b-container>
         </div>
         <div class="button mt-4">
-            <b-button variant="outline-secondary">Login</b-button>
-        </div>
-        <div class="registrasi">
-            Belum ada Akun? <b-button class="link" variant="link" to="/register">Buat Akun</b-button>
+            <b-button variant="outline-secondary">Register</b-button>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: "Login",
+    name: "Register",
     components: {
         
     },
@@ -43,7 +64,7 @@ export default {
 </script>
 
 <style lang="scss">
-    .login{
+    .register{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -55,13 +76,6 @@ export default {
         .input{
             align-items: center;
             width: 50vw;
-        }
-        .registrasi{
-            .link{
-                margin: 0;
-                padding-top: 0;
-                padding-left: 8px;
-            }
         }
     }
 </style>

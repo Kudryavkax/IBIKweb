@@ -14,15 +14,6 @@
             </router-link>
         </div>
       </div>
-      <!--
-      <div :class="'information'+navbar_class(0)">
-        <div class="ibik mx-5">
-          <h1>Inkubator Bisnis dan Kerjasama</h1>
-          <h2>IBIK FTI UNTAR</h2>
-          <p>Website IBIK memberikan informasi mengenai kerjasama antara Fakultas Teknologi Informasi(FTI) UNTAR dan perusahaan, mencakup informasi mengenai kegiatan seperti magang, seminar, dan lowongan kerja yang dibuka atau diadakan oleh perusahaan yang bekerja sama dengan FTI UNTAR</p>
-        </div>
-      </div>
-      -->
     </div>
 </template>
 
@@ -113,12 +104,6 @@ export default {
                 }
             }
         }
-    }
-  }
-  .information{
-    display: none;
-    &.active {
-      display: block;
     }
   }
 }
