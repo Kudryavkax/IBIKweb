@@ -48,9 +48,12 @@ export default {
         flex-direction: column;
         align-items: center;
         position: relative;
-        padding: 10px 0;
+        padding: 0;
         .title{
+            Padding: 20px 20px 1px 20px;
             text-align: center;
+            background-color: #f9dacd;
+            width: 100%;
         }
         .input{
             align-items: center;

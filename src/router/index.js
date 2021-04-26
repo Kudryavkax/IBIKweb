@@ -25,6 +25,14 @@ const routes = [
         {
             path: 'register',
             component: () => import('../views/Home/Register'),
+        },
+        {
+            path: 'pengumuman',
+            component: () => import('../views/Home/Pengumuman'),
+        },
+        {
+            path: 'detail',
+            component: () => import('../views/Home/DetailLowongan'),
         },]
     }
 ]

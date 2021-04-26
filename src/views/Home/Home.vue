@@ -94,7 +94,7 @@ export default {
   .ibik{
     text-align: center;
     padding: 20px 10%;
-    background: linear-gradient( rgba(230, 194, 139, 0.3),rgb(255, 235, 205, 0.3)) ;
+    background: linear-gradient( rgba(230, 194, 139, 0.3),rgb(255, 235, 205, 0.3)), #f5f2e4;
   }
   .Pengumuman{
     display: flex;
@@ -107,7 +107,7 @@ export default {
     .isi{
       display: flex;
       flex-direction: row;
-      background-color: thistle;
+      background-color: rgb(224, 165, 224);
       justify-content: space-between;
       width: 50vw;
       margin: 0 10px 10px 0;
@@ -137,8 +137,8 @@ export default {
       position: sticky;
       top: 108px;
       width: 100vw;
-      Padding: 10px 20px 1px 20px;
-      background-color: hotpink;
+      Padding: 20px 20px 1px 20px;
+      background-color: rgb(252, 180, 216);
       text-align: center;
     }
     .tablelowongan{

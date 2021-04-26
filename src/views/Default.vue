@@ -23,7 +23,6 @@ export default {
 
 <style lang="scss">
 .index {
-  background-color: rgb(245, 242, 228);
 
   .page-container {
       display: flex;
@@ -39,7 +38,6 @@ export default {
       right: 0;
       bottom: 0;
       .body-container{
-        background-color: rgb(245, 242, 228);
         position: relative;
         margin-top: 110px;
       }

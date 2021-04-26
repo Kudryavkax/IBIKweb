@@ -69,12 +69,13 @@ export default {
         flex-direction: column;
         align-items: center;
         position: relative;
-        padding: 10px 0;
         .title{
+            width: 100%;
+            Padding: 20px 20px 1px 20px;
             text-align: center;
+            background-color: #f9dacd;
         }
         .input{
-            align-items: center;
             width: 50vw;
         }
     }
