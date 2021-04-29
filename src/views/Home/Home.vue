@@ -4,55 +4,73 @@
           <h1>Inkubator Bisnis dan Kerjasama</h1>
           <h2 class="sticky">IBIK FTI UNTAR</h2>
           <hr size="6" width="200px" align="center" color="Black">
-          <p>Website IBIK memberikan informasi mengenai kerjasama antara Fakultas Teknologi Informasi(FTI) UNTAR dan perusahaan, mencakup informasi mengenai kegiatan seperti magang, seminar, dan lowongan kerja yang dibuka atau diadakan oleh perusahaan yang bekerja sama dengan FTI UNTAR</p>
+          <p>IBiK merupakan wadah dalam Fakultas Teknologi Informasi(FTI) UNTAR untuk membangun bisnis startup di dalam bidang Teknologi dan sebagai wadah kerjasama antara Fakultas Teknologi Informasi UNTAR dengan mitra lainnya seperti Perusahaan, Industri, Sekolah, dan lainnya, mencakup informasi mengenai kegiatan seperti magang, seminar, dan lowongan kerja yang dibuka atau diadakan oleh mitra yang bekerja sama dengan FTI UNTAR</p>
       </div>
       <div class="Pengumuman">
-        <div class="listpengumuman">
-          <h3>Pengumuman</h3>
-          <hr size="6" width="100px" align="left" color="Black">
-          <b-list-group>
-            <b-list-group-item class="isi" to="/Pengumuman">
-              <a class="title">Webinar IDStar "Moving towards Society 5.0"</a>
-              <a class="date">31 Oktober 2020</a></b-list-group-item>
-            <b-list-group-item class="isi" to="">
-              <a class="title">Virtual Campus Tour ruparupa.com</a>
-              <a class="date">31 Oktober 2020</a></b-list-group-item>
-            <b-list-group-item class="isi" to="">
-              <a class="title">Webinar BCA "Beyond the Foundation of ITBCA Services"</a>
-              <a class="date">15 Oktober 2020</a></b-list-group-item>
-            <b-list-group-item class="isi" to="">
-              <a class="title">Webinar BCA " Digital Innovation Solution at IT BCA"</a>
-              <a class="date">22 September 2020</a></b-list-group-item>
-          </b-list-group>
+        <div class="title">
+          <h2>Pengumuman</h2>
+          <hr size="6" width="100px" align="center" color="Black">
         </div>
-        <div class="carousel">
-          <b-carousel
-            id="carousel-fade"
-            indicators
-          >
-            <b-carousel-slide class="image"
-              img-src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.LxpdqDoY3j9mhOnpYsTgJAHaE8%26pid%3DApi%26h%3D160&f=1"
-            ></b-carousel-slide>
-            <b-carousel-slide class="image"
-              img-src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.EJ_Nl2727-4yyvjiDuebawHaK-%26pid%3DApi%26h%3D160&f=1"
-            ></b-carousel-slide>
-            <b-carousel-slide class="image"
-              :img-src= "require('../../assets/backgroundnav.jpg')"
-            ></b-carousel-slide>
-          </b-carousel>
+        <div class="listpengumuman">
+          <b-card-group deck>
+            <b-card img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top>
+              <b-card-text>
+                <b-button class="link" variant="link" to="/pengumuman">Webinar IDStar "Moving towards Society 5.0"</b-button>
+              </b-card-text>
+              <template #footer>
+                <small class="text-muted">31 Oktober 2020</small>
+              </template>
+            </b-card>
+            <b-card img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top>
+              <b-card-text>
+                Virtual Campus Tour ruparupa.com
+              </b-card-text>
+              <template #footer>
+                <small class="text-muted">31 Oktober 2020</small>
+              </template>
+            </b-card>
+            <b-card img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top>
+              <b-card-text>
+                Webinar BCA "Beyond the Foundation of ITBCA Services"
+              </b-card-text>
+              <template #footer>
+                <small class="text-muted">15 Oktober 2020</small>
+              </template>
+            </b-card>
+            <b-card img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top>
+              <b-card-text>
+                Webinar BCA " Digital Innovation Solution at IT BCA"
+              </b-card-text>
+              <template #footer>
+                <small class="text-muted">22 September 2020</small>
+              </template>
+            </b-card>
+          </b-card-group>
+        </div>
+        <div class="more">
+          <b-button class="link" variant="link" to="/pengumuman">Pengumuman Sebelumnya >></b-button>
         </div>
       </div>
       <div class="Lowongan">
         <div class="title">
-          <h2> Lowongan Pekerjaan</h2>
+          <h2>Lowongan Pekerjaan</h2>
           <hr size="6" width="100px" align="center" color="Black">
         </div>
         <div class="tablelowongan">
-          <b-table hover 
-            head-variant="light"
-            :fields="fields"
-            :items="items">
-          </b-table>
+          <b-card-group deck>
+            <b-card img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top v-for="item in items" :key="item.key">
+              <b-card-text>
+                <b-button class="link" variant="link" to="/detail">{{item.JudulLowongan}}</b-button>
+                {{item.NamaPerusahaan}}
+              </b-card-text>
+              <template #footer>
+                <small class="text-muted">{{item.DurasiInternship}}</small>
+              </template>
+            </b-card>
+          </b-card-group>
+          <div class="more">
+            <b-button class="link" variant="link" to="/lowongan">Lowongan lainnya >></b-button>
+          </div>
         </div>
       </div>
     </div>
@@ -66,18 +84,21 @@ export default {
     },
     data() {
       return {
-        fields: ['JudulLowongan', 'NamaPerusahaan', 'DurasiInternship'],
         items: [
-          { JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INSTERNSHIP', 
+          { key:1,
+            JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INTERNSHIP', 
             NamaPerusahaan: 'PT Dynamics Inovasi Solusindo', 
             DurasiInternship: '12 Bulan Full Time' },
-          { JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INSTERNSHIP', 
+          { key:2,
+            JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INTERNSHIP', 
             NamaPerusahaan: 'PT Dynamics Inovasi Solusindo', 
             DurasiInternship: '12 Bulan Full Time' },
-          { JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INSTERNSHIP', 
+          { key:3,
+            JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INTERNSHIP', 
             NamaPerusahaan: 'PT Dynamics Inovasi Solusindo', 
             DurasiInternship: '12 Bulan Full Time' },
-          { JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INSTERNSHIP', 
+          { key:4,
+            JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INTERNSHIP', 
             NamaPerusahaan: 'PT Dynamics Inovasi Solusindo', 
             DurasiInternship: '12 Bulan Full Time' },
         ],
@@ -95,58 +116,59 @@ export default {
     text-align: center;
     padding: 20px 10%;
     background: linear-gradient( rgba(230, 194, 139, 0.3),rgb(255, 235, 205, 0.3)), #f5f2e4;
+    height: 86vh;
   }
   .Pengumuman{
-    display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background-color: white;
     justify-content: space-between;
-    padding: 10vh 5%;
     width: 100%;
-    height: 90vh;
-    .isi{
-      display: flex;
-      flex-direction: row;
-      background-color: rgb(224, 165, 224);
-      justify-content: space-between;
-      width: 50vw;
-      margin: 0 10px 10px 0;
-      .title{
-        color: black;
-        text-decoration: none;
-      }
-      .date{
-        color: white;
-        text-decoration: none;
-      }
-    }
-    .carousel{
-      height: 45vh;
-      width: 100%;
-      padding: 0 10px;
-      background:linear-gradient(#ffffff,#ebe6bf) ;
-      .carousel-item img {
-        height:44vh ;
-        width: auto;
-        object-fit: contain;
-      }
-    }
-  }
-  .Lowongan{
+    height: 86vh;
     .title{
       position: sticky;
       top: 108px;
       width: 100vw;
-      Padding: 20px 20px 1px 20px;
+      padding: 20px 20px 1px 20px;
+      z-index: 98;
+      background-color: rgb(252, 180, 216);
+      text-align: center;
+    }
+    .listpengumuman{
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 10vh 5% 0 5%;
+      .link{
+        text-align: left;
+      }
+    }
+    .more{
+      padding: 0;
+      margin-right: 5%;
+      text-align: right;
+    }
+  }
+  .Lowongan{
+    height: 91vh;
+    .title{
+      position: sticky;
+      top: 108px;
+      width: 100vw;
+      z-index: 98;
+      padding: 20px 20px 1px 20px;
       background-color: rgb(252, 180, 216);
       text-align: center;
     }
     .tablelowongan{
-      height: 80vh;
       background-color: white;
-      Padding: 10vh 5%;
+      padding: 10vh 5% 0 5%;
+    }
+    .more{
+      text-align: right;
     }
   }
 }
 
+.link{
+  padding: 0;
+}
 </style>

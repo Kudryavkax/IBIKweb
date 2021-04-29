@@ -2,7 +2,7 @@
     <div class="navibar">
       <div class="navibar-top">
         <router-link class="fti-logo" to="/">
-            <img src="@/assets/logo.png" alt="">
+            <img src="@/assets/logo.webp" alt="">
         </router-link>
         <div class="content">
             <router-link to="/home" :class="'btn '+navbar_class(0)" @click.native="active_page = 0">HOME</router-link>
@@ -66,8 +66,9 @@ export default {
   background-image: linear-gradient( rgb(255, 235, 205, 0.3),rgb(255, 235, 205, 0.3)), url("../assets/backgroundnav.jpg") ;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100vw;
-  background-position-y: top;
+  background-size: 120vw;
+  background-position-y:40%;
+  background-position-x:85%;
   .navibar-top {
     display: flex;
     flex-direction: row;
@@ -93,7 +94,7 @@ export default {
             font-family: "Bree Serif";
             font-size: max(1.5vw,14px);
             &.active {
-                color: rgb(226, 186, 75);
+                color: rgb(128, 75, 226);
                 &::after {
                     content: "";
                     background: white;
