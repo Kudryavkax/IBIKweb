@@ -39,7 +39,6 @@ export default {
       bottom: 0;
       .body-container{
         position: relative;
-        margin-top: 110px;
       }
   }
 }

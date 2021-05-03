@@ -1,62 +1,31 @@
 <template>
     <div class="navibar">
-      <div class="navibar-top">
-        <router-link class="fti-logo" to="/">
-            <img src="@/assets/logo.webp" alt="">
-        </router-link>
-        <div class="content">
-            <router-link to="/home" :class="'btn '+navbar_class(0)" @click.native="active_page = 0">HOME</router-link>
-            <router-link to="/lowongan" :class="'btn '+navbar_class(1)" @click.native="active_page = 1">LOWONGAN PEKERJAAN</router-link>
-            <a href="https://career.untar.ac.id/index.php/ind" :class="'btn '">UNTAR CAREER</a>
-            <router-link to="/login" :class="'btn '+navbar_class(2)" @click.native="active_page = 2">
-            <b-icon icon="person-fill"></b-icon>
-            LOGIN
-            </router-link>
-        </div>
-      </div>
+      <b-navbar toggleable="lg" class="navibar-top" type="light" variant="dark">
+        <b-navbar-brand class="fti-logo" to="/home">
+        <img src="@/assets/logo.webp" alt="">
+        </b-navbar-brand>
+        <b-nav-toggle target="nav-content"></b-nav-toggle>
+        <b-collapse id="nav-content" is-nav>
+          <b-navbar-nav class="ml-auto">
+            <router-link class="btn" to="/home">HOME</router-link>
+            <router-link class="btn" to="/lowongan">LOWONGAN PEKERJAAN</router-link>
+            <a class="btn" href="https://career.untar.ac.id/index.php/ind">UNTAR CAREER</a>
+            <router-link class="btn" to="/login"><b-icon icon="person-fill"></b-icon>LOGIN</router-link>
+          </b-navbar-nav>
+        </b-collapse>
+      </b-navbar>
     </div>
 </template>
 
 <script>
 export default {
     name: "Navbar",
-    components: {},
-    data() {
-    return {
-      active_page: 0
-    }
-  },
-  methods: {
-    navbar_class(val) {
-      if(this.active_page == val){
-        return "active";
-      }
-      else{
-        return "";
-      }
-    }
-  },
-  created() {
-    switch (this.$route.path) {
-      case '/home':
-        this.active_page = 0
-            break;
-      case '/lowongan':
-        this.active_page = 1
-        break;
-      case '/login':
-        this.active_page = 2
-        break;
-    }
-  }
+    components: {}
 }
 </script>
 
 <style scoped lang="scss">
-.navibar{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.navibar-top{
   color: black;
   width: 100vw;
   z-index: 99;
@@ -69,49 +38,22 @@ export default {
   background-size: 120vw;
   background-position-y:40%;
   background-position-x:85%;
-  .navibar-top {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    .fti-logo{
-      padding: 10px;
-      &:hover{
-        background-color: rgb(255, 235, 205, 0.1);
-      }
-      img {
-          height: 90px;
-      }
+  .fti-logo{
+    padding: 10px;
+    &:hover{
+      background-color: rgb(255, 235, 205, 0.1);
     }
-
-    .content {
-        display: flex;
-        flex-direction: row;
-        margin: auto 0;
-        .btn {
-            margin: 0 4px;
-            box-shadow: none;
-            color: black;
-            font-family: "Bree Serif";
-            font-size: max(1.5vw,14px);
-            &.active {
-                color: rgb(128, 75, 226);
-                &::after {
-                    content: "";
-                    background: white;
-                    display: block;
-                    top: 0;
-                    width: 100%;
-                    height: 2px;
-                }
-            }
-        }
+    img {
+        height: 90px;
     }
   }
-}
-
-.ibik{
-  text-align: center;
-  margin: 0 10%;
+  .btn{
+    text-align: left;
+    font-weight: bold;
+  }
+  .router-link-active{
+    color: blueviolet;
+  }
 }
 
 </style>

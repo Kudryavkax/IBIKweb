@@ -38,6 +38,7 @@ export default {
     .lowongan{
         display: flex;
         flex-direction: column;
+        margin-top: 108px;
         padding: 20px 5vw;
         .title{
             text-align: center;

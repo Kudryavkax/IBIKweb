@@ -114,9 +114,19 @@ export default {
   position: relative;
   .ibik{
     text-align: center;
-    padding: 20px 10%;
+    margin-top: 120px;
+    padding: 100px 10%;
     background: linear-gradient( rgba(230, 194, 139, 0.3),rgb(255, 235, 205, 0.3)), #f5f2e4;
     height: 86vh;
+    h1{
+      padding-top: 20px;
+    }
+    h2{
+      padding-top: 20px;
+    }
+    p{
+      padding-top: 20px;
+    }
   }
   .Pengumuman{
     flex-direction: column;

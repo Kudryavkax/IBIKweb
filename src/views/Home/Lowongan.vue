@@ -46,6 +46,7 @@ export default {
     .Lowongan{
         display: flex;
         flex-direction: column;
+        margin: 10vh 0 0 0;
         .title{
         position: sticky;
         top: 108px;
@@ -57,7 +58,7 @@ export default {
         .tablelowongan{
         height: 80vh;
         background-color: white;
-        Padding: 10vh 5%;
+        Padding: 108px 5%;
         }
     }
 </style>

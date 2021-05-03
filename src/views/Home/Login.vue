@@ -49,6 +49,8 @@ export default {
         align-items: center;
         position: relative;
         padding: 0;
+        height: 60vh;
+        margin-top: 108px;
         .title{
             Padding: 20px 20px 1px 20px;
             text-align: center;

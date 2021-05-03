@@ -31,6 +31,7 @@ export default {
         display: flex;
         flex-direction: column;
         padding: 20px 5vw;
+        margin-top: 108px;
         .title{
             text-align: center;
             .tanggalpost{
