@@ -14,27 +14,46 @@ const routes = [
         {
             path: 'home',
             component:() => import("../views/Home/Home"),
-        },{
-            path: 'lowongan',
-            component: () => import('../views/Home/Lowongan'),
-        },
-        {
-            path: 'login',
-            component: () => import('../views/Home/Login'),
-        },
-        {
-            path: 'register',
-            component: () => import('../views/Home/Register'),
         },
         {
             path: 'pengumuman',
             component: () => import('../views/Home/Pengumuman'),
         },
         {
+            path: 'lowongan',
+            component: () => import('../views/Home/Lowongan'),
+        },
+        {
             path: 'detail',
             component: () => import('../views/Home/DetailLowongan'),
+        },
+        {
+            path: 'register',
+            component: () => import('../views/Register/RegisterMhs'),
+        },
+        {
+            path: 'daftar',
+            component: () => import('../views/Register/DaftarPer'),
         },]
-    }
+        
+    },
+    {
+        path: '/login',
+        component: () => import('../views/Default'),
+        children: [{
+            path: '',
+            component: () => import('../views/Login/Login'),
+        },{
+            path: 'Admin',
+            component: () => import('../views/Login/LoginAdAss'),
+        },{
+            path: 'Mahasiswa',
+            component: () => import('../views/Login/LoginMahasiswa'),
+        },{
+            path: 'Perusahaan',
+            component: () => import('../views/Login/LoginPerusahaan'),
+        },]
+    },
 ]
 
 const router = new VueRouter({

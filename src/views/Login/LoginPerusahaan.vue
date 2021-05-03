@@ -1,7 +1,7 @@
 <template>
-    <div class="login">
+    <div class="loginPer">
         <div class="title">
-            <h2>Login</h2>
+            <h2>Login Perusahaan</h2>
             <hr size="6" width="100px" align="center" color="Black">
         </div>
         <div class="input">
@@ -28,14 +28,14 @@
             <b-button variant="outline-secondary">Login</b-button>
         </div>
         <div class="registrasi">
-            Belum ada Akun? <b-button class="link" variant="link" to="/register">Buat Akun</b-button>
+            Belum ada Akun? <b-button class="link" variant="link" to="/register">Register Perusahaan anda</b-button>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: "Login",
+    name: "LoginPerusahaan",
     components: {
         
     },
@@ -43,7 +43,7 @@ export default {
 </script>
 
 <style lang="scss">
-    .login{
+    .loginPer{
         display: flex;
         flex-direction: column;
         align-items: center;
