@@ -28,7 +28,7 @@
             <b-button variant="outline-secondary">Login</b-button>
         </div>
         <div class="registrasi">
-            Belum ada Akun? <b-button class="link" variant="link" to="/register">Register Perusahaan anda</b-button>
+            Belum ada Akun? <b-button class="link" variant="link" to="/daftar">Register Perusahaan anda</b-button>
         </div>
     </div>
 </template>
@@ -48,8 +48,7 @@ export default {
         flex-direction: column;
         align-items: center;
         position: relative;
-        padding: 0;
-        height: 60vh;
+        padding: 0 0 110px 0;
         margin-top: 108px;
         .title{
             Padding: 20px 20px 1px 20px;

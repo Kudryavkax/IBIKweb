@@ -70,7 +70,6 @@ export default {
         align-items: center;
         position: relative;
         margin-top: 108px;
-        height: 60vh;
         .title{
             width: 100%;
             Padding: 20px 20px 1px 20px;

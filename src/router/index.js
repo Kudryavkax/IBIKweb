@@ -54,6 +54,14 @@ const routes = [
             component: () => import('../views/Login/LoginPerusahaan'),
         },]
     },
+    {
+        path: '/admin',
+        component: () => import('../views/Admin'),
+        children: [{
+            path: '',
+            component: () => import('../views/Admin/Home'),
+        },]
+    },
 ]
 
 const router = new VueRouter({

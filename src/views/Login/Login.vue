@@ -1,26 +1,32 @@
 <template>
     <div class="login">
-        <router-link class="cardd" to="/login/admin">
-            <div class="bgimg btnadmin" ></div>
-            <div class="inside">
-            <h4>Login Admin</h4>
-            <p>KLIK DISINI UNTUK LOGIN SEBAGAI ADMIN ATAU ASISTEN</p>
-            </div>
-        </router-link>
-        <router-link class="cardd" to="/login/mahasiswa">
-            <div class="bgimg btnmhs" ></div>
-            <div class="inside">
-            <h4>Login Mahasiswa</h4>
-            <p>KLIK DISINI UNTUK LOGIN SEBAGAI MAHASISWA</p>
-            </div>
-        </router-link>
-        <router-link class="cardd" to="/login/perusahaan">
-            <div class="bgimg btnper" ></div>
-            <div class="inside">
-            <h4>Login Perusahaan</h4>
-            <p>KLIK DISINI UNTUK LOGIN SEBAGAI PERUSAHAAN</p>
-            </div>
-        </router-link>
+        <div class="cardd">
+            <router-link to="/login/admin">
+                <div class="bgimg btnadmin" ></div>
+                <div class="inside">
+                <h4>Login Admin</h4>
+                <p>KLIK DISINI UNTUK LOGIN SEBAGAI ADMIN ATAU ASISTEN</p>
+                </div>
+            </router-link>
+        </div>
+        <div class="cardd">
+            <router-link to="/login/mahasiswa">
+                <div class="bgimg btnmhs" ></div>
+                <div class="inside">
+                <h4>Login Mahasiswa</h4>
+                <p>KLIK DISINI UNTUK LOGIN SEBAGAI MAHASISWA</p>
+                </div>
+            </router-link>
+        </div>
+        <div class="cardd">
+            <router-link to="/login/perusahaan">
+                <div class="bgimg btnper" ></div>
+                <div class="inside">
+                <h4>Login Perusahaan</h4>
+                <p>KLIK DISINI UNTUK LOGIN SEBAGAI PERUSAHAAN</p>
+                </div>
+            </router-link>
+        </div>
     </div>
 </template>
 
@@ -39,11 +45,11 @@ export default {
         flex-direction: row;
         position: relative;
         padding: 20px;
-        height: 60vh;
+        height: 840px;
         margin-top: 120px;
         justify-content: space-around;
         .cardd{
-            width: 30vw;
+            width: 420px;
             overflow: hidden;
             .bgimg{
                 position: relative;
@@ -65,13 +71,13 @@ export default {
                 }
             }
             .btnadmin{
-                background-image:linear-gradient(#d95b61bb,#d95b61bb), url("../../assets/backgroundnav.jpg");
+                background-image:linear-gradient(#d95b61bb,#d95b61bb), url("../../assets/admin.jpg");
             }
             .btnmhs{
-                background-image:linear-gradient(#5b68d9bb,#5b68d9bb), url("../../assets/backgroundnav.jpg");
+                background-image:linear-gradient(#5b68d9bb,#5b68d9bb), url("../../assets/student.jpg");
             }
             .btnper{
-                background-image:linear-gradient(#d9d75bbb,#d9d75bbb), url("../../assets/backgroundnav.jpg");
+                background-image:linear-gradient(#d9d75bbb,#d9d75bbb), url("../../assets/perusahaan.jpg");
             }
             .inside{
                 color: white;
@@ -79,6 +85,12 @@ export default {
                 top: 15vh;
                 padding-left: 20px;
                 width: 26vw;
+                h4{
+                    font-size: 1.7vw;
+                }
+                p{
+                    font-size: 1.15vw;
+                }
             }
         }
     }

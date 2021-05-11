@@ -25,7 +25,7 @@
             </b-container>
         </div>
         <div class="button mt-4">
-            <b-button variant="outline-secondary">Login</b-button>
+            <b-button variant="outline-secondary" @click="loginfunc">Login</b-button>
         </div>
     </div>
 </template>
@@ -36,6 +36,11 @@ export default {
     components: {
         
     },
+    methods:{
+        loginfunc(){
+            this.$router.push("/Admin")
+        }
+    },
 }
 </script>
 
@@ -45,8 +50,7 @@ export default {
         flex-direction: column;
         align-items: center;
         position: relative;
-        padding: 0;
-        height: 60vh;
+        padding: 0 0 140px 0;
         margin-top: 108px;
         .title{
             Padding: 20px 20px 1px 20px;
