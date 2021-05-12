@@ -43,7 +43,7 @@ export default {
             display: flex;
             flex-direction: row;
             padding: 0 20px;
-            justify-content: space-between;
+            justify-content: space-around;
             .isi{
                 white-space: pre-line;
             }

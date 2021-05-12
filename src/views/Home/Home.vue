@@ -15,7 +15,7 @@
           <b-card-group deck>
             <b-card img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top>
               <b-card-text>
-                <b-button class="link" variant="link" to="/pengumuman">Webinar IDStar "Moving towards Society 5.0"</b-button>
+                <b-button class="link" variant="link" to="/pengumuman/1">Webinar IDStar "Moving towards Society 5.0"</b-button>
               </b-card-text>
               <template #footer>
                 <small class="text-muted">31 Oktober 2020</small>
@@ -60,7 +60,7 @@
           <b-card-group deck>
             <b-card img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top v-for="item in items" :key="item.key">
               <b-card-text>
-                <b-button class="link" variant="link" to="/detail">{{item.JudulLowongan}}</b-button>
+                <b-button class="link" variant="link" :to='/lowongan/+item.key' >{{item.JudulLowongan}}</b-button>
                 {{item.NamaPerusahaan}}
               </b-card-text>
               <template #footer>

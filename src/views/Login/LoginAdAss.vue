@@ -38,7 +38,7 @@ export default {
     },
     methods:{
         loginfunc(){
-            this.$router.push("/Admin")
+            this.$router.push("/admin")
         }
     },
 }

@@ -47,7 +47,7 @@ export default {
             display: flex;
             flex-direction: row;
             padding: 10px 20px;
-            justify-content: space-between;
+            justify-content: space-evenly;
             .textbody{
                 flex-direction: column;
                 .isi{

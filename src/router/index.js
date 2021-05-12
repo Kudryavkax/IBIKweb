@@ -16,18 +16,6 @@ const routes = [
             component:() => import("../views/Home/Home"),
         },
         {
-            path: 'pengumuman',
-            component: () => import('../views/Home/Pengumuman'),
-        },
-        {
-            path: 'lowongan',
-            component: () => import('../views/Home/Lowongan'),
-        },
-        {
-            path: 'detail',
-            component: () => import('../views/Home/DetailLowongan'),
-        },
-        {
             path: 'register',
             component: () => import('../views/Register/RegisterMhs'),
         },
@@ -55,12 +43,48 @@ const routes = [
         },]
     },
     {
+        path: '/pengumuman',
+        component: () => import('../views/Default'),
+        children: [{
+            path: '',
+            component: () => import('../views/Home/ListPengumuman'),
+        },{
+            path: ':id',
+            component: () => import('../views/Home/DetailPengumuman'),
+        },]
+    },
+    {
+        path: '/lowongan',
+        component: () => import('../views/Default'),
+        children: [{
+            path: '',
+            component: () => import('../views/Home/ListLowongan'),
+        },{
+            path: ':id',
+            component: () => import('../views/Home/DetailLowongan'),
+        },]
+    },
+    {
         path: '/admin',
         component: () => import('../views/Admin'),
         children: [{
             path: '',
             component: () => import('../views/Admin/Home'),
-        },]
+        },
+        {
+            path: 'setting',
+            component: () => import('../views/Setting/Index'),
+            children: [{
+                path: 'nama',
+                component: () => import('../views/Setting/Nama'),
+            },{
+                path: 'email',
+                component: () => import('../views/Setting/Email'),
+            },{
+                path: 'password',
+                component: () => import('../views/Setting/Password'),
+            },]
+        }]
     },
 ]
 
