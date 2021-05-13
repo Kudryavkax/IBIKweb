@@ -25,45 +25,54 @@ const routes = [
         },]
         
     },
+
     {
         path: '/login',
         component: () => import('../views/Default'),
         children: [{
             path: '',
             component: () => import('../views/Login/Login'),
-        },{
-            path: 'Admin',
+        },
+        {
+            path: 'admin',
             component: () => import('../views/Login/LoginAdAss'),
-        },{
-            path: 'Mahasiswa',
+        },
+        {
+            path: 'mahasiswa',
             component: () => import('../views/Login/LoginMahasiswa'),
-        },{
-            path: 'Perusahaan',
+        },
+        {
+            path: 'perusahaan',
             component: () => import('../views/Login/LoginPerusahaan'),
         },]
     },
+
     {
         path: '/pengumuman',
         component: () => import('../views/Default'),
         children: [{
             path: '',
             component: () => import('../views/Home/ListPengumuman'),
-        },{
+        },
+        {
             path: ':id',
             component: () => import('../views/Home/DetailPengumuman'),
         },]
     },
+
     {
         path: '/lowongan',
         component: () => import('../views/Default'),
         children: [{
             path: '',
             component: () => import('../views/Home/ListLowongan'),
-        },{
+        },
+        {
             path: ':id',
             component: () => import('../views/Home/DetailLowongan'),
         },]
     },
+
     {
         path: '/admin',
         component: () => import('../views/Admin'),
@@ -72,15 +81,45 @@ const routes = [
             component: () => import('../views/Admin/Home'),
         },
         {
+            path: 'pengumuman',
+            component: () => import('../views/Admin/Pengumuman/Pengumuman'),
+        },
+        {
+            path: 'pengumuman/add',
+            component: () => import('../views/Admin/Pengumuman/InputPengumuman'),
+        },
+        {
+            path: 'pengumuman/edit/:id',
+            component: () => import('../views/Admin/Pengumuman/InputPengumuman'),
+        },
+        {
+            path: 'lowongan',
+            component: () => import('../views/Admin/Lowongan/Lowongan'),
+        },
+        {
+            path: 'lowongan/add',
+            component: () => import('../views/Admin/Lowongan/InputLowongan'),
+        },
+        {
+            path: 'lowongan/edit/:id',
+            component: () => import('../views/Admin/Lowongan/InputLowongan'),
+        },
+        {
             path: 'setting',
             component: () => import('../views/Setting/Index'),
             children: [{
+                path: "",
+                redirect: "nama"
+            },
+            {
                 path: 'nama',
                 component: () => import('../views/Setting/Nama'),
-            },{
+            },
+            {
                 path: 'email',
                 component: () => import('../views/Setting/Email'),
-            },{
+            },
+            {
                 path: 'password',
                 component: () => import('../views/Setting/Password'),
             },]

@@ -1,7 +1,7 @@
 <template>
     <div class="navibar">
       <b-navbar toggleable="lg" class="navibar-top" type="light" variant="dark">
-        <b-navbar-brand class="fti-logo" to="admin">
+        <b-navbar-brand class="fti-logo" to="/admin">
         <img src="@/assets/logo.webp" alt="">
         </b-navbar-brand>
         <b-nav-toggle target="nav-content"></b-nav-toggle>
@@ -9,8 +9,8 @@
           <b-navbar-nav class="ml-auto">
             <b-nav-item class="btn" to="#">PERIODE</b-nav-item>
             <b-nav-item-dropdown class="btn" text="PENGUMUMAN & LOWONGAN" right>
-              <b-dropdown-item to="#">Pengumuman</b-dropdown-item>
-              <b-dropdown-item to="#">Lowongan</b-dropdown-item>
+              <b-dropdown-item to="/admin/pengumuman">Pengumuman</b-dropdown-item>
+              <b-dropdown-item to="/admin/lowongan">Lowongan</b-dropdown-item>
             </b-nav-item-dropdown>
             <b-nav-item-dropdown class="btn" text="PERUSAHAAN" right>
               <b-dropdown-item to="#">Akun Perusahaan</b-dropdown-item>
