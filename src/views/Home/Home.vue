@@ -133,10 +133,11 @@ export default {
     background-color: white;
     justify-content: space-between;
     width: 100%;
-    padding-bottom: 30px;
+    margin-top: 0;
+    margin-bottom: 50px;
     .title{
       position: sticky;
-      top: 108px;
+      top: 120px;
       width: 100vw;
       padding: 20px 20px 1px 20px;
       z-index: 98;
@@ -158,10 +159,11 @@ export default {
     }
   }
   .Lowongan{
-    padding-bottom: 30px;
+    margin-bottom: 50px;
+    margin-top: 0;
     .title{
       position: sticky;
-      top: 108px;
+      top: 120px;
       width: 100vw;
       z-index: 98;
       padding: 20px 20px 1px 20px;

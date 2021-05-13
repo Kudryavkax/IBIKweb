@@ -81,8 +81,8 @@ export default {
     left: 0;
     background-color: #efe4f5;
     iframe{
-        height: 30vh;
-        width: 30vw;
+        height: auto;
+        width: 400px;
     }
     .foot-content{
         padding: 2vh 0 0 0;
@@ -107,7 +107,6 @@ export default {
         }
         .contact{
             display: flex;
-            flex-direction: row;
             justify-content: space-between;
             .email{
                 display: flex;

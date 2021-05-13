@@ -66,6 +66,7 @@ export default {
         .title{
           position: sticky;
           top: 108px;
+          z-index: 98;
           width: 100vw;
           Padding: 20px 20px 1px 20px;
           background-color: #fcb4d8;
