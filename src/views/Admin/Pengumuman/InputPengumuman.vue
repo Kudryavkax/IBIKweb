@@ -65,12 +65,12 @@ export default {
             }
         }
         .buttongroup{
-            margin: 20px;
+            margin: 20px 0;
             display: flex;
             flex-direction: row;
-            justify-content: space-around;
+            justify-content: flex-end;
             button{
-                margin:0 40px;
+                margin-left: 20px;
             }
         }
     }
