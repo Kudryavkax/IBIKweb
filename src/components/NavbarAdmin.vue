@@ -7,7 +7,7 @@
         <b-nav-toggle target="nav-content"></b-nav-toggle>
         <b-collapse id="nav-content" is-nav>
           <b-navbar-nav class="ml-auto">
-            <b-nav-item class="btn" to="#">PERIODE</b-nav-item>
+            <b-nav-item class="btn" to="/admin/periode/#">PERIODE</b-nav-item>
             <b-nav-item-dropdown class="btn" text="PENGUMUMAN & LOWONGAN" right>
               <b-dropdown-item to="/admin/pengumuman">Pengumuman</b-dropdown-item>
               <b-dropdown-item to="/admin/lowongan">Lowongan</b-dropdown-item>

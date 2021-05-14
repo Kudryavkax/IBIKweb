@@ -81,6 +81,31 @@ const routes = [
             component: () => import('../views/Admin/Home'),
         },
         {
+            path: 'periode',
+            component: () => import('../views/Admin/Periode/Index'),
+            children: [{
+                path: '',
+                component: () => import('../views/Admin/Periode/Periode'),
+            },
+            {
+                path: 'masadaftar',
+                component: () => import('../views/Admin/Periode/MasaDaftar'),
+            },
+            {
+                path: 'masainput',
+                component: () => import('../views/Admin/Periode/MasaInput'),
+            },
+            {
+                path: 'input',
+                component: () => import('../views/Admin/Periode/InputData'),
+            },
+            {
+                path: 'asisten',
+                component: () => import('../views/Admin/Periode/Asisten'),
+            },
+            ]
+        },
+        {
             path: 'pengumuman',
             component: () => import('../views/Admin/Pengumuman/Pengumuman'),
         },

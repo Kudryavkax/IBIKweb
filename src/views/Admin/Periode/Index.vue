@@ -1,10 +1,12 @@
 <template>
-    <div class="Setting-contain">
+    <div class="Periode-contain">
         <div class="Navselect">
             <b-nav tabs>
-                <b-nav-item to="/admin/setting/nama">Ganti Nama</b-nav-item>
-                <b-nav-item to="/admin/setting/email">Ganti Email</b-nav-item>
-                <b-nav-item to="/admin/setting/password">Ganti Password</b-nav-item>
+                <b-nav-item to="/admin/periode/#">Daftar Periode</b-nav-item>
+                <b-nav-item to="/admin/periode/masadaftar">Masa Pendaftaran Internship</b-nav-item>
+                <b-nav-item to="/admin/periode/masainput">Masa Input Data Internship</b-nav-item>
+                <b-nav-item to="/admin/periode/input">Input Data Internship Mahasiswa</b-nav-item>
+                <b-nav-item to="/admin/periode/asisten">Data Asisten</b-nav-item>
             </b-nav>
         </div>
         <router-view class="body-container"></router-view>
@@ -13,7 +15,7 @@
 
 <script>
 export default {
-    name: "IndexSetting",
+    name: "IndexPeriode",
     components: {
         
     }
@@ -21,15 +23,15 @@ export default {
 </script>
 
 <style lang="scss">
-.Setting-contain{
+.Periode-contain{
   display: flex;
   flex-direction: column;
   position: relative;
   .Navselect{
       position: fixed;
       top: 126px;
-      width: 100%;
       z-index: 98;
+      width: 100%;
       background-color: white;
       .router-link-active{
         color: #495057;
@@ -42,7 +44,7 @@ export default {
       flex-direction: column;
       align-items: center;
       padding: 0 5vw;
-      margin: 168px 100px 0 100px;
+      margin: 210px 100px 0 100px;
   }
 }
 </style>
