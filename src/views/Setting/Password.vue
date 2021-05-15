@@ -1,12 +1,12 @@
 <template>
     <div class="PasswordBody">
-        <label>Username:</label>
+        <label>Username :</label>
         <b-form-input v-model="username" disabled></b-form-input>
-        <label>Password Lama:</label>
+        <label>Password Lama :</label>
         <b-form-input v-model="passwordold"></b-form-input>
-        <label>Password Baru:</label>
+        <label>Password Baru :</label>
         <b-form-input v-model="passwordnew"></b-form-input>
-        <label>Ulangi Password Baru:</label>
+        <label>Ulangi Password Baru :</label>
         <b-form-input v-model="passwordrepeat"></b-form-input>
         <div class="buttongroup">
             <b-button variant="outline-secondary" >Batal</b-button>

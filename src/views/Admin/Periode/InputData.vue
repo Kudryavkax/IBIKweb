@@ -2,7 +2,7 @@
     <div class="InputData-body">
         <label>NPM :</label>
         <b-form-input id="inputnpm" v-model="npm"></b-form-input>
-        <b-btn id="btnn" class="btnnext my-1" @click="check">Next</b-btn>
+        <b-btn variant="outline-secondary" id="btnn" class="btnnext my-1" @click="check">Next</b-btn>
         <div id="nextsect" class="nextsect">
             <label>Nama :</label>
             <b-form-input v-model="nama"></b-form-input>
@@ -14,13 +14,13 @@
             <b-form-input v-model="no"></b-form-input>
             <label>Email :</label>
             <b-form-input v-model="email"></b-form-input>
-            <label>Skripsi Semester:</label>
+            <label>Skripsi Semester :</label>
             <b-form-radio-group
                 v-model="periode"
                 :options="periodeoptions"
                 class="radio-inline"
             ></b-form-radio-group>
-            <b-btn id="btns" class="btnsave my-1">Simpan</b-btn>
+            <b-btn variant="outline-secondary" id="btns" class="btnsave my-1">Simpan</b-btn>
         </div>
     </div>
 </template>
@@ -50,7 +50,7 @@ export default {
         check(){
             document.getElementById("btnn").style.display="none";
             document.getElementById("nextsect").style.display="block";
-            document.getElementById("inputnpm").disabled="true"
+            document.getElementById("inputnpm").disabled="true";
         }
     }
 }
@@ -74,6 +74,9 @@ export default {
             label{
                 padding-top: 0;
             }
+        }
+        .btnsave{
+            margin: 20px 0;
         }
     }
 }

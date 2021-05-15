@@ -8,42 +8,42 @@
             <b-container fluid>
                 <b-row class="mt-3">
                     <b-col sm="3">
-                    <label for="input-username">Username (NPM):</label>
+                    <label for="input-username">Username (NPM) :</label>
                     </b-col>
                     <b-col>
-                    <b-form-input id="input-username"></b-form-input>
+                    <b-form-input v-model="username" id="input-username"></b-form-input>
                     </b-col>
                 </b-row>
                 <b-row class="mt-3">
                     <b-col sm="3">
-                    <label for="input-nama">Nama:</label>
+                    <label for="input-nama">Nama :</label>
                     </b-col>
                     <b-col>
-                    <b-form-input id="input-nama"></b-form-input>
+                    <b-form-input v-model="nama" id="input-nama"></b-form-input>
                     </b-col>
                 </b-row>
                 <b-row class="mt-3">
                     <b-col sm="3">
-                    <label for="input-email">Email:</label>
+                    <label for="input-email">Email :</label>
                     </b-col>
                     <b-col>
-                    <b-form-input id="input-email"></b-form-input>
+                    <b-form-input v-model="email" id="input-email"></b-form-input>
                     </b-col>
                 </b-row>
                 <b-row class="mt-3">
                     <b-col sm="3">
-                    <label for="input-password">Password:</label>
+                    <label for="input-password">Password :</label>
                     </b-col>
                     <b-col>
-                    <b-form-input id="input-password" type="password"></b-form-input>
+                    <b-form-input v-model="password" id="input-password" type="password"></b-form-input>
                     </b-col>
                 </b-row>
                 <b-row class="mt-3">
                     <b-col sm="3">
-                    <label for="input-upassword">Ulang Password:</label>
+                    <label for="input-upassword">Ulang Password :</label>
                     </b-col>
                     <b-col>
-                    <b-form-input id="input-upassword" type="password"></b-form-input>
+                    <b-form-input v-model="repassword" id="input-upassword" type="password"></b-form-input>
                     </b-col>
                 </b-row>
             </b-container>
@@ -60,6 +60,15 @@ export default {
     components: {
         
     },
+    data(){
+        return{
+            username:null,
+            nama:null,
+            email:null,
+            password:null,
+            repassword:null
+        }
+    }
 }
 </script>
 
@@ -69,7 +78,7 @@ export default {
         flex-direction: column;
         align-items: center;
         position: relative;
-        margin-top: 108px;
+        margin: 118px 0 38px 0;
         .title{
             width: 100%;
             Padding: 20px 20px 1px 20px;

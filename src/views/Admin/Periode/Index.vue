@@ -3,10 +3,10 @@
         <div class="Navselect">
             <b-nav tabs>
                 <b-nav-item to="/admin/periode/#">Daftar Periode</b-nav-item>
-                <b-nav-item to="/admin/periode/masadaftar">Masa Pendaftaran Internship</b-nav-item>
-                <b-nav-item to="/admin/periode/masainput">Masa Input Data Internship</b-nav-item>
-                <b-nav-item to="/admin/periode/input">Input Data Internship Mahasiswa</b-nav-item>
-                <b-nav-item to="/admin/periode/asisten">Data Asisten</b-nav-item>
+                <b-nav-item to="masadaftar">Masa Pendaftaran Internship</b-nav-item>
+                <b-nav-item to="masainput">Masa Input Data Internship</b-nav-item>
+                <b-nav-item to="input">Input Data Internship Mahasiswa</b-nav-item>
+                <b-nav-item to="asisten">Data Asisten</b-nav-item>
             </b-nav>
         </div>
         <router-view class="body-container"></router-view>

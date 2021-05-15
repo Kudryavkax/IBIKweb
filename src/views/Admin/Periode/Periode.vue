@@ -1,6 +1,6 @@
 <template>
     <div class="Periode-body">
-        <b-btn class="btnadd my-1">Tambah Periode <b-icon-plus-circle-fill></b-icon-plus-circle-fill></b-btn>
+        <b-btn class="btnadd my-1" to="add">Tambah Periode <b-icon-plus-circle-fill></b-icon-plus-circle-fill></b-btn>
         <b-table hover 
             head-variant="light"
             :fields="fields"

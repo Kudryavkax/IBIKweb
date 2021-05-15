@@ -9,7 +9,7 @@
             <b-container fluid>
               <b-row class="my-1">
                 <b-col sm="2">
-                  <label for="input-nama">Cari Pengumuman:</label>
+                  <label for="input-nama">Cari Pengumuman :</label>
                 </b-col>
                 <b-col sm="8">
                   <b-form-input id="input-nama"></b-form-input>
@@ -65,7 +65,7 @@ export default {
         padding-bottom: 50px;
         .title{
           position: sticky;
-          top: 108px;
+          top: 120px;
           width: 100vw;
           z-index: 98;
           Padding: 20px 20px 1px 20px;

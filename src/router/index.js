@@ -88,6 +88,10 @@ const routes = [
                 component: () => import('../views/Admin/Periode/Periode'),
             },
             {
+                path: 'add',
+                component: () => import('../views/Admin/Periode/PeriodeAdd'),
+            },
+            {
                 path: 'masadaftar',
                 component: () => import('../views/Admin/Periode/MasaDaftar'),
             },

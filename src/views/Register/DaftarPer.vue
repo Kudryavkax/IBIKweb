@@ -8,50 +8,50 @@
             <b-container fluid>
                 <b-row class="mt-3">
                     <b-col sm="3">
-                    <label for="input-namapt">Nama Perusahaan:</label>
+                    <label for="input-namapt">Nama Perusahaan :</label>
                     </b-col>
                     <b-col>
-                    <b-form-input id="input-namapt"></b-form-input>
+                    <b-form-input v-model="nama" id="input-namapt"></b-form-input>
                     </b-col>
                 </b-row>
                 <b-row class="mt-3">
                     <b-col sm="3">
-                    <label for="input-alias">Alias Perusahaan:</label>
+                    <label for="input-alias">Alias Perusahaan :</label>
                     </b-col>
                     <b-col>
-                    <b-form-input id="input-alias"></b-form-input>
+                    <b-form-input v-model="alias" id="input-alias"></b-form-input>
                     </b-col>
                 </b-row>
                 <b-row class="mt-3">
                     <b-col sm="3">
-                    <label for="input-alamat">Alamat:</label>
+                    <label for="input-alamat">Alamat :</label>
                     </b-col>
                     <b-col>
-                    <b-form-input id="input-alamat "></b-form-input>
+                    <b-form-input v-model="alamat" id="input-alamat "></b-form-input>
                     </b-col>
                 </b-row>
                 <b-row class="mt-3">
                     <b-col sm="3">
-                    <label for="input-kontak">Nama Kontak:</label>
+                    <label for="input-kontak">Nama Kontak :</label>
                     </b-col>
                     <b-col>
-                    <b-form-input id="input-kontak"></b-form-input>
+                    <b-form-input v-model="kontak" id="input-kontak"></b-form-input>
                     </b-col>
                 </b-row>
                 <b-row class="mt-3">
                     <b-col sm="3">
-                    <label for="input-nokontak">Nomor Kontak:</label>
+                    <label for="input-nokontak">Nomor Kontak :</label>
                     </b-col>
                     <b-col>
-                    <b-form-input id="input-nokontak"></b-form-input>
+                    <b-form-input v-model="telepon" id="input-nokontak"></b-form-input>
                     </b-col>
                 </b-row>
                 <b-row class="mt-3">
                     <b-col sm="3">
-                    <label for="input-emailkontak">Email Kontak:</label>
+                    <label for="input-emailkontak">Email Kontak :</label>
                     </b-col>
                     <b-col>
-                    <b-form-input id="input-emailkontak"></b-form-input>
+                    <b-form-input v-model="email" id="input-emailkontak"></b-form-input>
                     </b-col>
                 </b-row>
             </b-container>
@@ -68,6 +68,17 @@ export default {
     components: {
         
     },
+    data(){
+        return{
+            nama:null,
+            alias:null,
+            alamat:null,
+            kontak:null,
+            telepon:null,
+            email:null
+
+        }
+    }
 }
 </script>
 
@@ -77,7 +88,7 @@ export default {
         flex-direction: column;
         align-items: center;
         position: relative;
-        margin-top: 108px;
+        margin: 118px 0 58px 0;
         .title{
             width: 100%;
             Padding: 20px 20px 1px 20px;

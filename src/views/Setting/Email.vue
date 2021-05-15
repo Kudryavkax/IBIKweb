@@ -1,8 +1,8 @@
 <template>
     <div class="EmailBody">
-        <label>Username:</label>
+        <label>Username :</label>
         <b-form-input v-model="username" disabled></b-form-input>
-        <label>Email:</label>
+        <label>Email :</label>
         <b-form-input v-model="email" placeholder="Enter your email"></b-form-input>
         <div class="buttongroup">
             <b-button variant="outline-secondary" >Batal</b-button>

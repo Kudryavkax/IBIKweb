@@ -1,9 +1,9 @@
 <template>
     <div class="Namabody">
-        <label>Username:</label>
+        <label>Username :</label>
         <b-form-input v-model="username" disabled></b-form-input>
-        <label>Nama:</label>
-        <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+        <label>Nama :</label>
+        <b-form-input v-model="nama" placeholder="Enter your name"></b-form-input>
         <div class="buttongroup">
             <b-button variant="outline-secondary" >Batal</b-button>
             <b-button variant="outline-secondary" >Ganti Nama</b-button>
@@ -20,7 +20,7 @@ export default {
     data(){
         return{
             username:"535180039",
-            text:"Mitchell Ryu Sopany"
+            nama:"Mitchell Ryu Sopany"
         }
     }
 }

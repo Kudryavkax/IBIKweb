@@ -8,18 +8,18 @@
             <b-container fluid>
                 <b-row class="mt-3">
                     <b-col sm="3">
-                    <label for="input-username">Username:</label>
+                    <label for="input-username">Username :</label>
                     </b-col>
                     <b-col>
-                    <b-form-input id="input-username"></b-form-input>
+                    <b-form-input v-model="username" id="input-username"></b-form-input>
                     </b-col>
                 </b-row>
                 <b-row class="mt-3">
                     <b-col sm="3">
-                    <label for="input-password">Password:</label>
+                    <label for="input-password">Password :</label>
                     </b-col>
                     <b-col>
-                    <b-form-input id="input-password" type="password"></b-form-input>
+                    <b-form-input v-model="password" id="input-password" type="password"></b-form-input>
                     </b-col>
                 </b-row>
             </b-container>
@@ -39,6 +39,12 @@ export default {
     components: {
         
     },
+    data(){
+        return{
+            username:null,
+            password:null
+        }
+    }
 }
 </script>
 

@@ -8,18 +8,18 @@
             <b-container fluid>
                 <b-row class="mt-3">
                     <b-col sm="3">
-                    <label for="input-username">Username:</label>
+                    <label for="input-username">Username :</label>
                     </b-col>
                     <b-col>
-                    <b-form-input id="input-username"></b-form-input>
+                    <b-form-input v-model="username" id="input-username"></b-form-input>
                     </b-col>
                 </b-row>
                 <b-row class="mt-3">
                     <b-col sm="3">
-                    <label for="input-password">Password:</label>
+                    <label for="input-password">Password :</label>
                     </b-col>
                     <b-col>
-                    <b-form-input id="input-password" type="password"></b-form-input>
+                    <b-form-input v-model="password" id="input-password" type="password"></b-form-input>
                     </b-col>
                 </b-row>
             </b-container>
@@ -41,6 +41,12 @@ export default {
             this.$router.push("/admin")
         }
     },
+    data(){
+        return{
+            username:null,
+            password:null
+        }
+    }
 }
 </script>
 
@@ -51,7 +57,7 @@ export default {
         align-items: center;
         position: relative;
         padding: 0 0 140px 0;
-        margin: 118px 0 44px 0;
+        margin: 118px 0 48px 0;
         .title{
             Padding: 20px 20px 1px 20px;
             text-align: center;

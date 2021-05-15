@@ -14,7 +14,7 @@
         :v-model="end"
         :date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }"
         ></b-form-datepicker>
-        <b-btn class="btnsave my-1">Simpan</b-btn>
+        <b-btn variant="outline-secondary" class="btnsave my-1">Simpan</b-btn>
     </div>
 </template>
 
