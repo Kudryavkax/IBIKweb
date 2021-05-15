@@ -1,12 +1,12 @@
 <template>
     <div class="Asisten-body">
-        <b-btn class="btnadd my-1">Tambah Asisten <b-icon icon="plus-circle-fill"></b-icon></b-btn>
+        <b-btn class="btnadd my-1" to="asisten/add">Tambah Asisten <b-icon icon="plus-circle-fill"></b-icon></b-btn>
         <b-table hover 
             head-variant="light"
             :fields="fields"
             :items="items">
-            <template #cell(Perintah)>
-                <b-button size="sm" class="mr-1">
+            <template #cell(Perintah)="row">
+                <b-button size="sm" class="mr-1" :to='"asisten/edit/"+row.item.Key'>
                 Edit
                 </b-button>
                 <b-button size="sm">
@@ -27,7 +27,8 @@ export default {
         return{
             fields: ['NPM', 'Nama', 'Perintah'],
             items: [
-                {   NPM:"535180039",
+                {   Key:1,
+                    NPM:"535180039",
                     Nama:"Mitchell Ryu Sopany"}
             ]
         }

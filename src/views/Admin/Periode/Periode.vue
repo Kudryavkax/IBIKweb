@@ -12,18 +12,21 @@
                 Set Aktif
                 </b-button>
             </template>
-            <template #cell(Perintah)>
-                <b-button size="sm" class="m-1">
+            <template #cell(Perintah)="row">
+                <b-button size="sm" class="m-1" :to='row.item.Key+"/lowongan"'>
                 Lowongan
                 </b-button>
-                <b-button size="sm" class="m-1">
-                Lihat Data Daftar
+                <b-button size="sm" class="m-1" :to='row.item.Key+"/datamahasiswa"'>
+                Data Daftar Mahasiswa
+                </b-button>
+                <b-button size="sm" class="m-1" :to='row.item.Key+"/datalowongan"'>
+                Data Daftar Per Lowongan
                 </b-button>
                 <b-button size="sm" class="m-1">
-                Lihat Data Internship
+                Data Internship
                 </b-button>
                 <b-button size="sm" class="m-1">
-                Lihat Upload Internship
+                Data Upload Internship
                 </b-button>
             </template>
           </b-table>

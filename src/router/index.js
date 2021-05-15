@@ -92,6 +92,18 @@ const routes = [
                 component: () => import('../views/Admin/Periode/PeriodeAdd'),
             },
             {
+                path: ':id/lowongan',
+                component: () => import('../views/Admin/Periode/LowonganPeriode'),
+            },
+            {
+                path: ':id/datamahasiswa',
+                component: () => import('../views/Admin/Periode/DataMahasiswa'),
+            },
+            {
+                path: ':id/datalowongan',
+                component: () => import('../views/Admin/Periode/DataLowongan'),
+            },
+            {
                 path: 'masadaftar',
                 component: () => import('../views/Admin/Periode/MasaDaftar'),
             },
@@ -107,7 +119,14 @@ const routes = [
                 path: 'asisten',
                 component: () => import('../views/Admin/Periode/Asisten'),
             },
-            ]
+            {
+                path: 'asisten/add',
+                component: () => import('../views/Admin/Periode/InputAsisten'),
+            },
+            {
+                path: 'asisten/edit/:id',
+                component: () => import('../views/Admin/Periode/InputAsisten'),
+            },]
         },
         {
             path: 'pengumuman',
