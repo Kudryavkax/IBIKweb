@@ -49,5 +49,8 @@ export default {
 
 <style lang="scss">
 .DataMahasiswa-body{
+    h4{
+        margin: 20px;
+    }
 }
 </style>

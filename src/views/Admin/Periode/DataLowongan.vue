@@ -57,5 +57,8 @@ export default {
 
 <style lang="scss">
 .DataLowongan-body{
+    h4{
+        margin: 20px;
+    }
 }
 </style>

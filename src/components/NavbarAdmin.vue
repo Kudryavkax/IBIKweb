@@ -13,8 +13,8 @@
               <b-dropdown-item to="/admin/lowongan">Lowongan</b-dropdown-item>
             </b-nav-item-dropdown>
             <b-nav-item-dropdown class="btn" text="PERUSAHAAN" right>
-              <b-dropdown-item to="#">Akun Perusahaan</b-dropdown-item>
-              <b-dropdown-item to="#">Data Perusahaan</b-dropdown-item>
+              <b-dropdown-item to="/admin/perusahaan/akun">Akun Perusahaan</b-dropdown-item>
+              <b-dropdown-item to="/admin/perusahaan/data">Data Perusahaan</b-dropdown-item>
             </b-nav-item-dropdown>
             <b-nav-item-dropdown class="btn" text="MAHASISWA" right>
               <b-dropdown-item to="#">Akun Mahasiswa</b-dropdown-item>

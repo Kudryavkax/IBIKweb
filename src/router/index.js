@@ -104,6 +104,14 @@ const routes = [
                 component: () => import('../views/Admin/Periode/DataLowongan'),
             },
             {
+                path: ':id/datainternship',
+                component: () => import('../views/Admin/Periode/DataInternship'),
+            },
+            {
+                path: ':id/dataupload',
+                component: () => import('../views/Admin/Periode/DataUpload'),
+            },
+            {
                 path: 'masadaftar',
                 component: () => import('../views/Admin/Periode/MasaDaftar'),
             },
@@ -127,6 +135,26 @@ const routes = [
                 path: 'asisten/edit/:id',
                 component: () => import('../views/Admin/Periode/InputAsisten'),
             },]
+        },
+        {
+            path: 'perusahaan/data',
+            component: () => import('../views/Admin/Perusahaan/Data'),
+        },
+        {
+            path: 'perusahaan/data/add',
+            component: () => import('../views/Admin/Perusahaan/InputData'),
+        },
+        {
+            path: 'perusahaan/akun',
+            component: () => import('../views/Admin/Perusahaan/Akun'),
+        },
+        {
+            path: 'perusahaan/akun/add/:id',
+            component: () => import('../views/Admin/Perusahaan/InputAkun'),
+        },
+        {
+            path: 'perusahaan/akun/view/:id',
+            component: () => import('../views/Admin/Perusahaan/InputAkun'),
         },
         {
             path: 'pengumuman',

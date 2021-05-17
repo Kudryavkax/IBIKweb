@@ -22,10 +22,10 @@
                 <b-button size="sm" class="m-1" :to='row.item.Key+"/datalowongan"'>
                 Data Daftar Per Lowongan
                 </b-button>
-                <b-button size="sm" class="m-1">
+                <b-button size="sm" class="m-1" :to='row.item.Key+"/datainternship"'>
                 Data Internship
                 </b-button>
-                <b-button size="sm" class="m-1">
+                <b-button size="sm" class="m-1" :to='row.item.Key+"/dataupload"'>
                 Data Upload Internship
                 </b-button>
             </template>
