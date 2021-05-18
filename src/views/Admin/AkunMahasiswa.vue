@@ -1,7 +1,7 @@
 <template>
-    <div class="AkunPerusahaan-body">
+    <div class="AkunMahasiswa-body">
         <div class="title">
-          <h2>Akun Perusahaan</h2>
+          <h2>Akun Mahasiswa</h2>
           <hr size="6" width="100px" align="center" color="Black">
         </div>
         <div class="tablebody">
@@ -9,7 +9,7 @@
             <b-container fluid>
               <b-row class="my-1">
                 <b-col sm="2">
-                  <label for="input-nama">Cari Perusahaan:</label>
+                  <label for="input-nama">Cari Mahasiswa:</label>
                 </b-col>
                 <b-col sm="8">
                   <b-form-input id="input-nama"></b-form-input>
@@ -27,18 +27,9 @@
                 <template #cell(No)="row">
                     {{row.index +1}}
                 </template>
-                <template #cell(Akun)="row">
-                    <b-button v-if="row.item.Akun==true" size="sm" class="mr-1" :to='"akun/view/"+row.item.Key'>
-                    Lihat Akun
-                    </b-button>
-                    <h4 v-else>-</h4>
-                </template>
-                <template #cell(Perintah)="row">
-                    <b-button v-if="row.item.Akun==false" size="sm" class="mr-1" :to='"akun/add/"+row.item.Key'>
-                    Tambah Akun
-                    </b-button>
-                    <b-button v-else size="sm" class="mr-1">
-                    Hapus Akun
+                <template #cell(Perintah)>
+                    <b-button size="sm" class="mr-1">
+                    Reset Password
                     </b-button>
                 </template>
             </b-table>
@@ -48,7 +39,7 @@
 
 <script>
 export default {
-    name: "AkunPerusahaan",
+    name: "AkunMahasiswa",
     components: {
         
     },
@@ -56,20 +47,14 @@ export default {
         return{
             periode:"Genap 2020/2021",
             fields: [   'No',
-                        {key:"nama", label:"Nama Perusahaan"},
-                        {key:"alias", label:"Nama Alias"},
-                        "Akun",
+                        {key:"npm", label:"NPM"},
+                        {key:"nama", label:"Nama"},
                         "Perintah"
                         ],
             items: [
                         {Key:1,
-                        nama:"DICE Ice Cube",
-                        alias:"DICE",
-                        Akun:true},
-                        {Key:2,
-                        nama:"PT Adicipta Inovasi Teknologi",
-                        alias:"AdIns",
-                        Akun:false}
+                        npm:535180039,
+                        nama:"Mitchell Ryu Sopany"},
             ]
         }
     }
@@ -77,7 +62,7 @@ export default {
 </script>
 
 <style lang="scss">
-.AkunPerusahaan-body{
+.AkunMahasiswa-body{
     display: flex;
     flex-direction: column;
     margin: 10vh 0 0 0;

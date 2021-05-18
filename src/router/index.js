@@ -137,12 +137,28 @@ const routes = [
             },]
         },
         {
+            path: 'mahasiswa',
+            component: () => import('../views/Admin/AkunMahasiswa'),
+        },
+        {
             path: 'perusahaan/data',
             component: () => import('../views/Admin/Perusahaan/Data'),
         },
         {
             path: 'perusahaan/data/add',
             component: () => import('../views/Admin/Perusahaan/InputData'),
+        },
+        {
+            path: 'perusahaan/data/edit/:id',
+            component: () => import('../views/Admin/Perusahaan/EditData'),
+        },
+        {
+            path: 'perusahaan/data/moaadd/:id',
+            component: () => import('../views/Admin/Perusahaan/InputMoa'),
+        },
+        {
+            path: 'perusahaan/data/moaedit/:id',
+            component: () => import('../views/Admin/Perusahaan/InputMoa'),
         },
         {
             path: 'perusahaan/akun',
@@ -182,7 +198,7 @@ const routes = [
         },
         {
             path: 'setting',
-            component: () => import('../views/Setting/Index'),
+            component: () => import('../views/Setting/AdminIndex'),
             children: [{
                 path: "",
                 redirect: "nama"
@@ -198,6 +214,10 @@ const routes = [
             {
                 path: 'password',
                 component: () => import('../views/Setting/Password'),
+            },
+            {
+                path: 'jam',
+                component: () => import('../views/Setting/JamAbsen'),
             },]
         }]
     },

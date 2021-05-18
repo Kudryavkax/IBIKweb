@@ -3,11 +3,11 @@
         <label>Username :</label>
         <b-form-input v-model="username" disabled></b-form-input>
         <label>Password Lama :</label>
-        <b-form-input v-model="passwordold"></b-form-input>
+        <b-form-input v-model="passwordold" type="password"></b-form-input>
         <label>Password Baru :</label>
-        <b-form-input v-model="passwordnew"></b-form-input>
+        <b-form-input v-model="passwordnew" type="password"></b-form-input>
         <label>Ulangi Password Baru :</label>
-        <b-form-input v-model="passwordrepeat"></b-form-input>
+        <b-form-input v-model="passwordrepeat" type="password"></b-form-input>
         <div class="buttongroup">
             <b-button variant="outline-secondary" >Batal</b-button>
             <b-button variant="outline-secondary" >Ganti Password</b-button>

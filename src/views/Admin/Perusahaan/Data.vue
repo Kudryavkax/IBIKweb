@@ -5,7 +5,24 @@
           <hr size="6" width="100px" align="center" color="Black">
         </div>
         <div class="tablebody">
-            <b-btn class="btnadd my-1" to="data/add"><b-icon icon="plus-circle-fill"></b-icon></b-btn>
+            <div class="search">
+                <b-container fluid>
+                    <b-row class="my-1">
+                        <b-col sm="2">
+                        <label for="input-nama">Cari Perusahaan:</label>
+                        </b-col>
+                        <b-col sm="8">
+                        <b-form-input id="input-nama"></b-form-input>
+                        </b-col>
+                        <b-col>
+                        <b-btn class="btnsearch">Search</b-btn>
+                        </b-col>
+                        <b-col>
+                        <b-btn class="btnadd" to="data/add"><b-icon icon="plus-circle-fill"></b-icon></b-btn>
+                        </b-col>
+                    </b-row>
+                </b-container>
+            </div>
             <b-table hover 
                 head-variant="light"
                 :fields="fields"
@@ -83,10 +100,11 @@ export default {
         text-align: center;
         display: flex;
         flex-direction: column;
-        .btnadd{
-            align-self: flex-end;
-            
-        }
+        .search{
+            display: flex;
+            flex-direction: row;
+            padding-bottom: 30px;
+          }
         background-color: white;
         Padding: 108px 5%;
     }

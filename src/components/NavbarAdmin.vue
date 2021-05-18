@@ -16,10 +16,7 @@
               <b-dropdown-item to="/admin/perusahaan/akun">Akun Perusahaan</b-dropdown-item>
               <b-dropdown-item to="/admin/perusahaan/data">Data Perusahaan</b-dropdown-item>
             </b-nav-item-dropdown>
-            <b-nav-item-dropdown class="btn" text="MAHASISWA" right>
-              <b-dropdown-item to="#">Akun Mahasiswa</b-dropdown-item>
-              <b-dropdown-item to="#">Data Pendaftaran</b-dropdown-item>
-            </b-nav-item-dropdown>
+            <b-nav-item class="btn" to="/admin/mahasiswa/">AKUN MAHASISWA</b-nav-item>
             <b-nav-item-dropdown class="btn" text="USER" right>
               <b-dropdown-item to="/admin/setting/nama">Setting</b-dropdown-item>
               <b-dropdown-item to="/home">Sign Out</b-dropdown-item>

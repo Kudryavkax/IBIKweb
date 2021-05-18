@@ -1,10 +1,11 @@
 <template>
-    <div class="Setting-contain">
+    <div class="AdminSetting-contain">
         <div class="Navselect">
             <b-nav tabs>
                 <b-nav-item to="nama">Ganti Nama</b-nav-item>
                 <b-nav-item to="email">Ganti Email</b-nav-item>
                 <b-nav-item to="password">Ganti Password</b-nav-item>
+                <b-nav-item to="jam">Ganti Jam Absen</b-nav-item>
             </b-nav>
         </div>
         <router-view class="body-container"></router-view>
@@ -13,7 +14,7 @@
 
 <script>
 export default {
-    name: "IndexSetting",
+    name: "AdminIndexSetting",
     components: {
         
     }
@@ -21,7 +22,7 @@ export default {
 </script>
 
 <style lang="scss">
-.Setting-contain{
+.AdminSetting-contain{
   display: flex;
   flex-direction: column;
   position: relative;
