@@ -38,7 +38,10 @@ export default {
     },
     methods:{
         loginfunc(){
-            this.$router.push("/admin")
+            if(this.username=="admin"&&this.password=="admin")
+                this.$router.push("/admin")
+            else
+                this.$router.push("/asisten")
         }
     },
     data(){

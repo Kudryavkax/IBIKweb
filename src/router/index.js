@@ -221,6 +221,15 @@ const routes = [
             },]
         }]
     },
+
+    {
+        path: '/asisten',
+        component: () => import('../views/Asisten'),
+        children: [{
+            path: '',
+            component: () => import('../views/Asisten/Home'),
+        },]
+    },
 ]
 
 const router = new VueRouter({
