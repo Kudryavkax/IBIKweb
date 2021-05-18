@@ -48,7 +48,7 @@ export default {
         return{
             judul:"",
             text:"",
-            mode:"Tambah",
+            mode:"",
             file1:null,
             perusahaan:null,
             tipe:null,
@@ -68,6 +68,14 @@ export default {
                 "applebee",
                 "applebecause"
             ],
+        }
+    },
+    mounted() {
+        this.mode=window.location.hash.substring(window.location.hash.lastIndexOf('/')+1);
+        if(this.mode=="add"){
+            this.mode="Tambah";
+        }else{
+            this.mode="Edit"
         }
     }
 }

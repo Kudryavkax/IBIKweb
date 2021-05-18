@@ -29,7 +29,16 @@ export default {
             perusahaan:"",
             username:"",
             name:"",
-            mode:"Tambah",
+            mode:"",
+        }
+    },
+    mounted() {
+        this.mode=window.location.hash.substr(0,window.location.hash.lastIndexOf('/'));
+        this.mode=this.mode.substring(this.mode.lastIndexOf('/')+1);
+        if(this.mode=="add"){
+            this.mode="Tambah";
+        }else{
+            this.mode="Edit"
         }
     }
 }

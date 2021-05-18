@@ -5,7 +5,7 @@
         <label>Nama :</label>
         <b-form-input v-model="nama"></b-form-input>
         <div class="buttongroup">
-            <b-button variant="outline-secondary" >Tambah Asisten</b-button>
+            <b-button variant="outline-secondary" >{{mode}} Asisten</b-button>
         </div>
     </div>
 </template>
@@ -18,8 +18,17 @@ export default {
     },
     data(){
         return{
+            mode:"",
             npm:null,
             nama:null,
+        }
+    },
+    mounted() {
+        this.mode=window.location.hash.substring(window.location.hash.lastIndexOf('/')+1);
+        if(this.mode=="add"){
+            this.mode="Tambah";
+        }else{
+            this.mode="Edit"
         }
     }
 }
