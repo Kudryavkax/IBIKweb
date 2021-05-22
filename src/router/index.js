@@ -104,6 +104,14 @@ const routes = [
                 component: () => import('../views/Admin/Periode/DataLowongan'),
             },
             {
+                path: ':id/datalowongan/:id2/detail',
+                component: () => import('../views/Admin/Periode/DetailDataLowongan'),
+            },
+            {
+                path: ':id/datalowongan/:id2/status',
+                component: () => import('../views/Admin/Periode/StatusDataLowongan'),
+            },
+            {
                 path: ':id/datainternship',
                 component: () => import('../views/Admin/Periode/DataInternship'),
             },
@@ -134,6 +142,10 @@ const routes = [
             {
                 path: 'asisten/edit/:id',
                 component: () => import('../views/Admin/Periode/InputAsisten'),
+            },
+            {
+                path: 'asisten/absen/:id',
+                component: () => import('../views/Admin/Periode/AbsenAsisten'),
             },]
         },
         {
@@ -228,7 +240,87 @@ const routes = [
         children: [{
             path: '',
             component: () => import('../views/Asisten/Home'),
-        },]
+        },
+        {
+            path: 'lowongan',
+            component: () => import('../views/Asisten/Lowongan/Lowongan'),
+        },
+        {
+            path: 'lowongan/add',
+            component: () => import('../views/Asisten/Lowongan/InputLowongan'),
+        },
+        {
+            path: 'lowongan/edit/:id',
+            component: () => import('../views/Asisten/Lowongan/InputLowongan'),
+        },
+        {
+            path: 'absen',
+            component: () => import('../views/Asisten/Absen'),
+        },
+        {
+            path: 'perusahaan/data',
+            component: () => import('../views/Asisten/Perusahaan/Data'),
+        },
+        {
+            path: 'perusahaan/data/add',
+            component: () => import('../views/Asisten/Perusahaan/InputData'),
+        },
+        {
+            path: 'perusahaan/data/edit/:id',
+            component: () => import('../views/Asisten/Perusahaan/EditData'),
+        },
+        {
+            path: 'perusahaan/data/moaadd/:id',
+            component: () => import('../views/Asisten/Perusahaan/InputMoa'),
+        },
+        {
+            path: 'perusahaan/data/moaedit/:id',
+            component: () => import('../views/Asisten/Perusahaan/InputMoa'),
+        },
+        {
+            path: 'internship',
+            component: () => import('../views/Asisten/Internship/Index'),
+            children: [{
+                path: "",
+                redirect: "input"
+            },
+            {
+                path: 'input',
+                component: () => import('../views/Asisten/Internship/InputData'),
+            },
+            {
+                path: 'datalowongan',
+                component: () => import('../views/Asisten/Internship/DataLowongan'),
+            },
+            {
+                path: 'datalowongan/:id/detail',
+                component: () => import('../views/Asisten/Internship/DetailDataLowongan'),
+            },
+            {
+                path: 'datalowongan/:id/status',
+                component: () => import('../views/Asisten/Internship/StatusDataLowongan'),
+            },]
+        },
+        {
+            path: 'setting',
+            component: () => import('../views/Setting/Index'),
+            children: [{
+                path: "",
+                redirect: "nama"
+            },
+            {
+                path: 'nama',
+                component: () => import('../views/Setting/Nama'),
+            },
+            {
+                path: 'email',
+                component: () => import('../views/Setting/Email'),
+            },
+            {
+                path: 'password',
+                component: () => import('../views/Setting/Password'),
+            },]
+        }]
     },
 ]
 
