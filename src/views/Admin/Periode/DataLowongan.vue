@@ -8,22 +8,14 @@
             <template #cell(No)="row">
                 {{row.index +1}}
             </template>
-            <template #cell(perintah)>
-                <b-button size="sm" class="m-1">
-                Detail Pendaftar
-                </b-button>
-                <b-button size="sm" class="m-1">
-                Excel Pendaftar
-                </b-button>
-                <b-button size="sm" class="m-1">
-                Proses Diterima
-                </b-button>
-                <b-button size="sm" class="m-1">
-                Excel Diterima
-                </b-button>
-                <b-button size="sm" class="m-1">
-                Zip File
-                </b-button>
+            <template #cell(perintah)="row">
+                <b-dropdown id="dropdown-1" text="Perintah" class="m-md-2">
+                        <b-dropdown-item :to='"datalowongan/"+row.item.Key+"/detail"'>Detail Pendaftar</b-dropdown-item>
+                        <b-dropdown-item >Excel Pendaftar</b-dropdown-item>
+                        <b-dropdown-item :to='"datalowongan/"+row.item.Key+"/status"'>Status Diterima</b-dropdown-item>
+                        <b-dropdown-item >Excel Diterima</b-dropdown-item>
+                        <b-dropdown-item >Zip File</b-dropdown-item>
+                    </b-dropdown>
             </template>
           </b-table>
     </div>
@@ -43,10 +35,11 @@ export default {
                         'NamaPerusahan',
                         'UnggahLamaran',
                         'Jumlah',
-                        'Perintah'
+                        {key:'Perintah', label:""}
                         ],
             items: [
-                {JudulLowongan:"Orang Tua Group",
+                {Key:1,
+                JudulLowongan:"Orang Tua Group",
                 NamaPerusahaan:"PT Pepper Tree Investama"
                 }
             ]
