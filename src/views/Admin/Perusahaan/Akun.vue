@@ -9,7 +9,7 @@
             <b-container fluid>
               <b-row class="my-1">
                 <b-col sm="2">
-                  <label for="input-nama">Cari Perusahaan:</label>
+                  <label for="input-nama">Cari Perusahaan :</label>
                 </b-col>
                 <b-col sm="8">
                   <b-form-input id="input-nama"></b-form-input>

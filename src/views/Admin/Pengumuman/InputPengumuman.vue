@@ -5,11 +5,11 @@
           <hr size="6" width="100px" align="center" color="Black">
         </div>
         <div class="forminput">
-            <label>Judul Pengumuman:</label>
+            <label>Judul Pengumuman :</label>
             <b-form-input v-model="judul" placeholder="Masukan Judul"></b-form-input>
-            <label>Detail Pengumuman:</label>
+            <label>Detail Pengumuman :</label>
             <b-form-textarea v-model="text" placeholder="Masukan Deskripsi" rows="4"></b-form-textarea>
-            <label>File Pengumuman:</label>
+            <label>File Pengumuman :</label>
             <b-form-file
             class="fileform"
             v-model="file1"

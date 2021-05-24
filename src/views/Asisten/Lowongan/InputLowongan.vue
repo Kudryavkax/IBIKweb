@@ -5,25 +5,25 @@
           <hr size="6" width="100px" align="center" color="Black">
         </div>
         <div class="forminput">
-            <label>Judul Lowongan:</label>
+            <label>Judul Lowongan :</label>
             <b-form-input v-model="judul" placeholder="Masukan Judul"></b-form-input>
-            <label>Detail Lowongan:</label>
+            <label>Detail Lowongan :</label>
             <b-form-textarea v-model="text" placeholder="Masukan Deskripsi" rows="4"></b-form-textarea>
-            <label>Perusahaan:</label>
+            <label>Perusahaan :</label>
             <v-select class="dropdown" v-model="perusahaan" :options="options"></v-select>
-            <label>Durasi Internship:</label>
+            <label>Durasi Internship :</label>
             <b-form-radio-group
                 v-model="durasi"
                 :options="durasioptions"
                 class="radio-inline"
             ></b-form-radio-group>
-            <label>Part/Full Time Internship:</label>
+            <label>Part/Full Time Internship :</label>
             <b-form-radio-group
                 v-model="tipe"
                 :options="tipeoptions"
                 class="radio-inline"
             ></b-form-radio-group>
-            <label>File Lowongan:</label>
+            <label>File Lowongan :</label>
             <b-form-file
             class="fileform"
             v-model="file1"
