@@ -258,6 +258,18 @@ const routes = [
             component: () => import('../views/Asisten/Absen'),
         },
         {
+            path: 'absen/add',
+            component: () => import('../views/Asisten/InputAbsen'),
+        },
+        {
+            path: 'absen/edit/:id',
+            component: () => import('../views/Asisten/InputAbsen'),
+        },
+        {
+            path: 'absen/cetak',
+            component: () => import('../views/Asisten/CetakAbsen'),
+        },
+        {
             path: 'perusahaan/data',
             component: () => import('../views/Asisten/Perusahaan/Data'),
         },
@@ -322,6 +334,43 @@ const routes = [
             },]
         }]
     },
+
+    {
+        path: '/mahasiswa',
+        component: () => import('../views/Mahasiswa'),
+        children: [{
+            path: '',
+            component: () => import('../views/Mahasiswa/Home'),
+        },
+        {
+            path: 'lowongan',
+            component: () => import('../views/Home/ListLowongan'),
+        },
+        {
+            path: 'lowongan/:id',
+            component: () => import('../views/Home/DetailLowongan'),
+        },
+        {
+            path: 'setting',
+            component: () => import('../views/Setting/Index'),
+            children: [{
+                path: "",
+                redirect: "nama"
+            },
+            {
+                path: 'nama',
+                component: () => import('../views/Setting/Nama'),
+            },
+            {
+                path: 'email',
+                component: () => import('../views/Setting/Email'),
+            },
+            {
+                path: 'password',
+                component: () => import('../views/Setting/Password'),
+            },]
+        },]
+    }
 ]
 
 const router = new VueRouter({

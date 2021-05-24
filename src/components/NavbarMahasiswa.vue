@@ -1,24 +1,17 @@
 <template>
     <div class="navibar">
       <b-navbar toggleable="lg" class="navibar-top" type="light" variant="dark">
-        <b-navbar-brand class="fti-logo" to="/asisten">
+        <b-navbar-brand class="fti-logo" to="/mahasiswa">
         <img src="@/assets/logo.webp" alt="">
         </b-navbar-brand>
         <b-nav-toggle target="nav-content"></b-nav-toggle>
         <b-collapse id="nav-content" is-nav>
           <b-navbar-nav class="ml-auto">
-            <b-nav-item-dropdown class="btn" text="MAHASISWA" right>
-              <b-dropdown-item to="/asisten/:id/pendaftaran">Data Pendaftaran</b-dropdown-item>
-              <b-dropdown-item to="/asisten/:id/internship">Data Internship</b-dropdown-item>
-            </b-nav-item-dropdown>
-            <b-nav-item class="btn" to="/asisten/lowongan/">LOWONGAN</b-nav-item>
-            <b-nav-item-dropdown class="btn" text="ASISTEN" right>
-              <b-dropdown-item to="/asisten/absen">Absensi</b-dropdown-item>
-              <b-dropdown-item to="/asisten/perusahaan/data">Data Perusahaan</b-dropdown-item>
-              <b-dropdown-item to="/asisten/internship/">Data Internship</b-dropdown-item>
-            </b-nav-item-dropdown>
+            <b-nav-item class="btn" to="/mahasiswa/internship/">DATA INTERNSHIP</b-nav-item>
+            <b-nav-item class="btn" to="/mahasiswa/pendaftaran/">DATA PENDAFTARAN</b-nav-item>
+            <b-nav-item class="btn" to="/mahasiswa/lowongan">LOWONGAN</b-nav-item>
             <b-nav-item-dropdown class="btn" text="USER" right>
-              <b-dropdown-item to="/asisten/setting/nama">Setting</b-dropdown-item>
+              <b-dropdown-item to="/mahasiswa/setting/nama">Setting</b-dropdown-item>
               <b-dropdown-item to="/home">Sign Out</b-dropdown-item>
             </b-nav-item-dropdown>
           </b-navbar-nav>

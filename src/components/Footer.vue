@@ -17,7 +17,8 @@
             <div class="email">
                 <b-icon class="m-2" icon="Envelope"></b-icon>
                 <p>Viny Christanti M., M. Kom<br>
-                corporate@fti.untar.ac.id</p>
+                Bisnis :<br>corporate@fti.untar.ac.id<br>
+                Mahasiswa :<br>intern@fti.untar.ac.id</p>
             </div>
             <div class="insta">
                 <b-icon class="m-2" icon="instagram"></b-icon>

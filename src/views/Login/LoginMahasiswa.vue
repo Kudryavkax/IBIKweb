@@ -25,7 +25,7 @@
             </b-container>
         </div>
         <div class="button mt-4">
-            <b-button variant="outline-secondary">Login</b-button>
+            <b-button variant="outline-secondary" @click="loginfunc">Login</b-button>
         </div>
         <div class="registrasi">
             Belum ada Akun? <b-button class="link" variant="link" to="/register">Buat Akun</b-button>
@@ -38,6 +38,11 @@ export default {
     name: "LoginMahasiswa",
     components: {
         
+    },
+    methods:{
+        loginfunc(){
+                this.$router.push("/mahasiswa")
+        }
     },
     data(){
         return{
