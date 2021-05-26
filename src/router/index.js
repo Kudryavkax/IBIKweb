@@ -343,6 +343,27 @@ const routes = [
             component: () => import('../views/Mahasiswa/Home'),
         },
         {
+            path: 'internship',
+            component: () => import('../views/Mahasiswa/DataInternship/Index'),
+            children: [
+            {
+                path: '',
+                component: () => import('../views/Mahasiswa/DataInternship/Internship'),
+            },
+            {
+                path: 'personal',
+                component: () => import('../views/Mahasiswa/DataInternship/Diri'),
+            },
+            {
+                path: 'dokumen',
+                component: () => import('../views/Mahasiswa/DataInternship/Dokumen'),
+            },]
+        },
+        {
+            path: 'pendaftaran',
+            component: () => import('../views/Mahasiswa/DataPendaftaran'),
+        },
+        {
             path: 'lowongan',
             component: () => import('../views/Home/ListLowongan'),
         },
