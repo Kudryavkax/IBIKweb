@@ -42,7 +42,10 @@ export default {
     },
     methods: {
         check(){
-            document.getElementById("nextsect").style.display="block";
+            if(this.lowongan!=null)
+                document.getElementById("nextsect").style.display="block";
+            else
+                document.getElementById("nextsect").style.display="none";
         }
     }
 }
