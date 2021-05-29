@@ -30,7 +30,7 @@
             drop-placeholder="Drop file here..."
             ></b-form-file>
             <div class="buttongroup">
-                <b-button variant="outline-secondary" to="/admin/perusahaan/data">Batal</b-button>
+                <b-button variant="outline-secondary" to="/admin/perusahaan/data/">Batal</b-button>
                 <b-button variant="outline-secondary" >{{mode}} MoA Perusahaan</b-button>
             </div>
         </div>

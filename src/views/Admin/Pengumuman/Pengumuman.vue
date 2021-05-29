@@ -18,7 +18,7 @@
                   <b-btn class="btnsearch">Search</b-btn>
                 </b-col>
                 <b-col>
-                  <b-btn class="btnadd" to="pengumuman/add"><b-icon icon="plus-circle-fill"></b-icon></b-btn>
+                  <b-btn class="btnadd" to="add"><b-icon icon="plus-circle-fill"></b-icon></b-btn>
                 </b-col>
               </b-row>
             </b-container>
@@ -28,7 +28,7 @@
             :fields="fields"
             :items="items">
             <template #cell(Perintah)="row">
-                <b-button size="sm" class="mr-1" :to='"pengumuman/edit/"+row.item.Key'>
+                <b-button size="sm" class="mr-1" :to='"edit/"+row.item.Key'>
                 Edit
                 </b-button>
                 <b-button size="sm">

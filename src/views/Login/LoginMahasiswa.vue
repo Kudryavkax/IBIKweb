@@ -41,7 +41,7 @@ export default {
     },
     methods:{
         loginfunc(){
-                this.$router.push("/mahasiswa")
+                this.$router.push("/mahasiswa/")
         }
     },
     data(){

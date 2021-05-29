@@ -28,6 +28,9 @@
             :fields="fields"
             :items="items">
             <template #cell(Perintah)="row">
+                <b-button size="sm" class="mr-1" :to='"data/"+row.item.Key'>
+                Data
+                </b-button>
                 <b-button size="sm" class="mr-1" :to='"edit/"+row.item.Key'>
                 Edit
                 </b-button>
@@ -48,7 +51,7 @@ export default {
     },
     data() {
       return {
-        fields: ['JudulLowongan', 'NamaPerusahaan', 'DurasiInternship','Perintah'],
+        fields: ['JudulLowongan', 'DurasiInternship','Perintah'],
         items: [
           { Key:1,
             JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INSTERNSHIP', 

@@ -242,6 +242,27 @@ const routes = [
             component: () => import('../views/Asisten/Home'),
         },
         {
+            path: 'data/internship',
+            component: () => import('../views/Asisten/DataInternshipIndex'),
+            children: [
+            {
+                path: '',
+                component: () => import('../views/Mahasiswa/DataInternship/Internship'),
+            },
+            {
+                path: 'personal',
+                component: () => import('../views/Mahasiswa/DataInternship/Diri'),
+            },
+            {
+                path: 'dokumen',
+                component: () => import('../views/Mahasiswa/DataInternship/Dokumen'),
+            },]
+        },
+        {
+            path: 'data/pendaftaran',
+            component: () => import('../views/Mahasiswa/DataPendaftaran'),
+        },
+        {
             path: 'lowongan',
             component: () => import('../views/Asisten/Lowongan/Lowongan'),
         },
@@ -370,6 +391,51 @@ const routes = [
         {
             path: 'lowongan/:id',
             component: () => import('../views/Home/DetailLowongan'),
+        },
+        {
+            path: 'setting',
+            component: () => import('../views/Setting/Index'),
+            children: [{
+                path: "",
+                redirect: "nama"
+            },
+            {
+                path: 'nama',
+                component: () => import('../views/Setting/Nama'),
+            },
+            {
+                path: 'email',
+                component: () => import('../views/Setting/Email'),
+            },
+            {
+                path: 'password',
+                component: () => import('../views/Setting/Password'),
+            },]
+        },]
+    },
+
+    {
+        path: '/perusahaan',
+        component: () => import('../views/Perusahaan'),
+        children: [{
+            path: '',
+            component: () => import('../views/Perusahaan/Home'),
+        },
+        {
+            path: 'lowongan',
+            component: () => import('../views/Perusahaan/Lowongan/ListLowongan'),
+        },
+        {
+            path: 'lowongan/add',
+            component: () => import('../views/Perusahaan/Lowongan/InputLowongan'),
+        },
+        {
+            path: 'lowongan/edit/:id',
+            component: () => import('../views/Perusahaan/Lowongan/InputLowongan'),
+        },
+        {
+            path: 'lowongan/data/:id',
+            component: () => import('../views/Perusahaan/Lowongan/DataLowongan'),
         },
         {
             path: 'setting',

@@ -9,8 +9,6 @@
             <b-form-input v-model="judul" placeholder="Masukan Judul"></b-form-input>
             <label>Detail Lowongan :</label>
             <b-form-textarea v-model="text" placeholder="Masukan Deskripsi" rows="4"></b-form-textarea>
-            <label>Perusahaan :</label>
-            <v-select class="dropdown" v-model="perusahaan" :options="options"></v-select>
             <label>Durasi Internship :</label>
             <b-form-radio-group
                 v-model="durasi"
@@ -32,7 +30,7 @@
             drop-placeholder="Drop file here..."
             ></b-form-file>
             <div class="buttongroup">
-                <b-button variant="outline-secondary" to="/admin/lowongan/">Batal</b-button>
+                <b-button variant="outline-secondary" to="/asisten/lowongan">Batal</b-button>
                 <b-button variant="outline-secondary" >{{mode}} Lowongan</b-button>
             </div>
         </div>

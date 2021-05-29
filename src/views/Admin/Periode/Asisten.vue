@@ -1,15 +1,15 @@
 <template>
     <div class="Asisten-body">
-        <b-btn class="btnadd my-1" to="asisten/add">Tambah Asisten <b-icon icon="plus-circle-fill"></b-icon></b-btn>
+        <b-btn class="btnadd my-1" to="add">Tambah Asisten <b-icon icon="plus-circle-fill"></b-icon></b-btn>
         <b-table hover 
             head-variant="light"
             :fields="fields"
             :items="items">
             <template #cell(Perintah)="row">
-                <b-button size="sm" class="mr-1" :to='"asisten/absen/"+row.item.Key'>
+                <b-button size="sm" class="mr-1" :to='"absen/"+row.item.Key'>
                 Absensi
                 </b-button>
-                <b-button size="sm" class="mr-1" :to='"asisten/edit/"+row.item.Key'>
+                <b-button size="sm" class="mr-1" :to='"edit/"+row.item.Key'>
                 Edit
                 </b-button>
                 <b-button size="sm">

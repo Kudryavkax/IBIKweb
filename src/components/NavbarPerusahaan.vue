@@ -1,17 +1,15 @@
 <template>
     <div class="navibar">
       <b-navbar toggleable="lg" class="navibar-top" type="light" variant="dark">
-        <b-navbar-brand class="fti-logo" to="/mahasiswa">
+        <b-navbar-brand class="fti-logo" to="/perusahaan">
         <img src="@/assets/logo.webp" alt="">
         </b-navbar-brand>
         <b-nav-toggle target="nav-content"></b-nav-toggle>
         <b-collapse id="nav-content" is-nav>
           <b-navbar-nav class="ml-auto">
-            <b-nav-item class="btn" to="/mahasiswa/internship/#">DATA INTERNSHIP</b-nav-item>
-            <b-nav-item class="btn" to="/mahasiswa/pendaftaran/">DATA PENDAFTARAN</b-nav-item>
-            <b-nav-item class="btn" to="/mahasiswa/lowongan">LOWONGAN</b-nav-item>
+            <b-nav-item class="btn" to="/perusahaan/lowongan/">LOWONGAN INTERNSHIP</b-nav-item>
             <b-nav-item-dropdown class="btn" text="USER" right>
-              <b-dropdown-item to="/mahasiswa/setting/">Setting</b-dropdown-item>
+              <b-dropdown-item to="/perusahaan/setting/">Setting</b-dropdown-item>
               <b-dropdown-item to="/home">Sign Out</b-dropdown-item>
             </b-nav-item-dropdown>
           </b-navbar-nav>

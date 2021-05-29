@@ -8,8 +8,8 @@
         <b-collapse id="nav-content" is-nav>
           <b-navbar-nav class="ml-auto">
             <b-nav-item-dropdown class="btn" text="MAHASISWA" right>
-              <b-dropdown-item to="/asisten/:id/pendaftaran">Data Pendaftaran</b-dropdown-item>
-              <b-dropdown-item to="/asisten/:id/internship">Data Internship</b-dropdown-item>
+              <b-dropdown-item to="/asisten/data/pendaftaran">Data Pendaftaran</b-dropdown-item>
+              <b-dropdown-item to="/asisten/data/internship/#">Data Internship</b-dropdown-item>
             </b-nav-item-dropdown>
             <b-nav-item class="btn" to="/asisten/lowongan/">LOWONGAN</b-nav-item>
             <b-nav-item-dropdown class="btn" text="ASISTEN" right>
@@ -18,7 +18,7 @@
               <b-dropdown-item to="/asisten/internship/">Data Internship</b-dropdown-item>
             </b-nav-item-dropdown>
             <b-nav-item-dropdown class="btn" text="USER" right>
-              <b-dropdown-item to="/asisten/setting/nama">Setting</b-dropdown-item>
+              <b-dropdown-item to="/asisten/setting/">Setting</b-dropdown-item>
               <b-dropdown-item to="/home">Sign Out</b-dropdown-item>
             </b-nav-item-dropdown>
           </b-navbar-nav>

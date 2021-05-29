@@ -58,6 +58,7 @@ export default {
         display: flex;
         flex-direction: column;
         .tablelowongan{
+          width: 100%;
           background-color: white;
           .search{
             display: flex;

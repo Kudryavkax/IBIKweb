@@ -1,7 +1,7 @@
 <template>
     <div class="login">
         <div class="cardd">
-            <router-link to="/login/admin">
+            <router-link to="/login/admin/">
                 <div class="bgimg btnadmin" ></div>
                 <div class="inside">
                 <h4>Login Admin</h4>
@@ -10,7 +10,7 @@
             </router-link>
         </div>
         <div class="cardd">
-            <router-link to="/login/mahasiswa">
+            <router-link to="/login/mahasiswa/">
                 <div class="bgimg btnmhs" ></div>
                 <div class="inside">
                 <h4>Login Mahasiswa</h4>
@@ -19,7 +19,7 @@
             </router-link>
         </div>
         <div class="cardd">
-            <router-link to="/login/perusahaan">
+            <router-link to="/login/perusahaan/">
                 <div class="bgimg btnper" ></div>
                 <div class="inside">
                 <h4>Login Perusahaan</h4>

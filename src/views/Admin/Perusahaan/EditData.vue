@@ -51,7 +51,7 @@
                 </template>
             </b-table>
             <div class="buttongroup">
-                <b-button variant="outline-secondary" to="/admin/perusahaan/data">Batal</b-button>
+                <b-button variant="outline-secondary" to="/admin/perusahaan/data/">Batal</b-button>
                 <b-button variant="outline-secondary" >Edit Perusahaan</b-button>
             </div>
         </div>

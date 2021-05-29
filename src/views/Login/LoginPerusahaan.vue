@@ -25,7 +25,7 @@
             </b-container>
         </div>
         <div class="button mt-4">
-            <b-button variant="outline-secondary">Login</b-button>
+            <b-button variant="outline-secondary" @click="loginfunc">Login</b-button>
         </div>
         <div class="registrasi">
             Belum ada Akun? <b-button class="link" variant="link" to="/daftar">Register Perusahaan anda</b-button>
@@ -38,6 +38,11 @@ export default {
     name: "LoginPerusahaan",
     components: {
         
+    },
+    methods:{
+        loginfunc(){
+                this.$router.push("/perusahaan/")
+        }
     },
     data(){
         return{

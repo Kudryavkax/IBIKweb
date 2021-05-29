@@ -1,16 +1,16 @@
 <template>
     <div class="navibar">
       <b-navbar toggleable="lg" class="navibar-top" type="light" variant="dark">
-        <b-navbar-brand class="fti-logo" to="/home">
+        <b-navbar-brand class="fti-logo" to="/home/">
         <img src="@/assets/logo.webp" alt="">
         </b-navbar-brand>
         <b-nav-toggle target="nav-content"></b-nav-toggle>
         <b-collapse id="nav-content" is-nav>
           <b-navbar-nav class="ml-auto">
-            <router-link class="btn" to="/home">HOME</router-link>
-            <router-link class="btn" to="/lowongan">LOWONGAN PEKERJAAN</router-link>
+            <router-link class="btn" to="/home/">HOME</router-link>
+            <router-link class="btn" to="/lowongan/">LOWONGAN PEKERJAAN</router-link>
             <a class="btn" href="https://career.untar.ac.id/index.php/ind">UNTAR CAREER</a>
-            <router-link class="btn" to="/login"><b-icon icon="person-fill"></b-icon>LOGIN</router-link>
+            <router-link class="btn" to="/login/"><b-icon icon="person-fill"></b-icon>LOGIN</router-link>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>

@@ -39,9 +39,9 @@ export default {
     methods:{
         loginfunc(){
             if(this.username=="admin"&&this.password=="admin")
-                this.$router.push("/admin")
+                this.$router.push("/admin/")
             else
-                this.$router.push("/asisten")
+                this.$router.push("/asisten/")
         }
     },
     data(){

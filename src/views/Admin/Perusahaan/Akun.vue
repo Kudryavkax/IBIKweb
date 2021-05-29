@@ -28,13 +28,13 @@
                     {{row.index +1}}
                 </template>
                 <template #cell(Akun)="row">
-                    <b-button v-if="row.item.Akun==true" size="sm" class="mr-1" :to='"akun/view/"+row.item.Key'>
+                    <b-button v-if="row.item.Akun==true" size="sm" class="mr-1" :to='"view/"+row.item.Key'>
                     Lihat Akun
                     </b-button>
                     <h4 v-else>-</h4>
                 </template>
                 <template #cell(Perintah)="row">
-                    <b-button v-if="row.item.Akun==false" size="sm" class="mr-1" :to='"akun/add/"+row.item.Key'>
+                    <b-button v-if="row.item.Akun==false" size="sm" class="mr-1" :to='"add/"+row.item.Key'>
                     Tambah Akun
                     </b-button>
                     <b-button v-else size="sm" class="mr-1">

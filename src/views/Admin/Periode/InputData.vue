@@ -70,6 +70,7 @@ export default {
         flex-direction: column;
         width: 100%;
         display: none;
+        margin-bottom: 100px;
         .radio-inline{
             label{
                 padding-top: 0;
