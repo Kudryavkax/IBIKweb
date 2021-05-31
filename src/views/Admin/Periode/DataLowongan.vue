@@ -10,9 +10,9 @@
             </template>
             <template #cell(perintah)="row">
                 <b-dropdown id="dropdown-1" text="Perintah" class="m-md-2">
-                        <b-dropdown-item :to='row.item.Key+"/detail/"'>Detail Pendaftar</b-dropdown-item>
+                        <b-dropdown-item :to='row.item.Key+"/detail"'>Detail Pendaftar</b-dropdown-item>
                         <b-dropdown-item >Excel Pendaftar</b-dropdown-item>
-                        <b-dropdown-item :to='row.item.Key+"/status/"'>Status Diterima</b-dropdown-item>
+                        <b-dropdown-item :to='row.item.Key+"/status"'>Status Diterima</b-dropdown-item>
                         <b-dropdown-item >Excel Diterima</b-dropdown-item>
                         <b-dropdown-item >Zip File</b-dropdown-item>
                     </b-dropdown>

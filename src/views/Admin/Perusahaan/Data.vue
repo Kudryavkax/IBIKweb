@@ -11,14 +11,17 @@
                         <b-col sm="2">
                         <label for="input-nama">Cari Perusahaan :</label>
                         </b-col>
-                        <b-col sm="8">
+                        <b-col sm="6">
                         <b-form-input id="input-nama"></b-form-input>
                         </b-col>
-                        <b-col>
+                        <b-col sm="1">
                         <b-btn class="btnsearch">Search</b-btn>
                         </b-col>
-                        <b-col>
+                        <b-col sm="1">
                         <b-btn class="btnadd" to="add"><b-icon icon="plus-circle-fill"></b-icon></b-btn>
+                        </b-col>
+                        <b-col>
+                        <b-btn class="btndownload">Download Rekap</b-btn>
                         </b-col>
                     </b-row>
                 </b-container>

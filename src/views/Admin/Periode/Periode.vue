@@ -1,6 +1,6 @@
 <template>
     <div class="Periode-body">
-        <b-btn class="btnadd my-1" to="add/">Tambah Periode <b-icon-plus-circle-fill></b-icon-plus-circle-fill></b-btn>
+        <b-btn class="btnadd my-1" to="add">Tambah Periode <b-icon-plus-circle-fill></b-icon-plus-circle-fill></b-btn>
         <b-table hover 
             head-variant="light"
             :fields="fields"
@@ -16,16 +16,16 @@
                 <b-button size="sm" class="m-1" :to='row.item.Key+"/lowongan/"'>
                 Lowongan
                 </b-button>
-                <b-button size="sm" class="m-1" :to='row.item.Key+"/datamahasiswa/"'>
+                <b-button size="sm" class="m-1" :to='row.item.Key+"/datamahasiswa"'>
                 Data Daftar Mahasiswa
                 </b-button>
                 <b-button size="sm" class="m-1" :to='row.item.Key+"/datalowongan/"'>
                 Data Daftar Per Lowongan
                 </b-button>
-                <b-button size="sm" class="m-1" :to='row.item.Key+"/datainternship/"'>
+                <b-button size="sm" class="m-1" :to='row.item.Key+"/datainternship"'>
                 Data Internship
                 </b-button>
-                <b-button size="sm" class="m-1" :to='row.item.Key+"/dataupload/"'>
+                <b-button size="sm" class="m-1" :to='row.item.Key+"/dataupload"'>
                 Data Upload Internship
                 </b-button>
             </template>

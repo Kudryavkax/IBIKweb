@@ -32,7 +32,7 @@
             drop-placeholder="Drop file here..."
             ></b-form-file>
             <div class="buttongroup">
-                <b-button variant="outline-secondary" to="/admin/lowongan/">Batal</b-button>
+                <b-button variant="outline-secondary" @click="back">Batal</b-button>
                 <b-button variant="outline-secondary" >{{mode}} Lowongan</b-button>
             </div>
         </div>
@@ -68,6 +68,11 @@ export default {
                 "applebee",
                 "applebecause"
             ],
+        }
+    },
+    methods:{
+        back(){
+            this.$router.go(-1)
         }
     },
     mounted() {

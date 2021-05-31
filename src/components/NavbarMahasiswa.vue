@@ -7,9 +7,9 @@
         <b-nav-toggle target="nav-content"></b-nav-toggle>
         <b-collapse id="nav-content" is-nav>
           <b-navbar-nav class="ml-auto">
-            <b-nav-item class="btn" to="/mahasiswa/internship/#">DATA INTERNSHIP</b-nav-item>
-            <b-nav-item class="btn" to="/mahasiswa/pendaftaran/">DATA PENDAFTARAN</b-nav-item>
-            <b-nav-item class="btn" to="/mahasiswa/lowongan">LOWONGAN</b-nav-item>
+            <b-nav-item class="btn" to="/mahasiswa/internship/">DATA INTERNSHIP</b-nav-item>
+            <b-nav-item class="btn" to="/mahasiswa/pendaftaran">DATA PENDAFTARAN</b-nav-item>
+            <b-nav-item class="btn" to="/mahasiswa/lowongan/">LOWONGAN</b-nav-item>
             <b-nav-item-dropdown class="btn" text="USER" right>
               <b-dropdown-item to="/mahasiswa/setting/">Setting</b-dropdown-item>
               <b-dropdown-item to="/home">Sign Out</b-dropdown-item>

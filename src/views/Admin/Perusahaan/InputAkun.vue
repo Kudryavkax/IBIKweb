@@ -12,7 +12,7 @@
             <label>Nama :</label>
             <b-form-input v-model="name"></b-form-input>
             <div class="buttongroup">
-                <b-button variant="outline-secondary" to="/admin/perusahaan/akun/">Batal</b-button>
+                <b-button variant="outline-secondary" @click="back">Batal</b-button>
                 <b-button variant="outline-secondary" >{{mode}} Lowongan</b-button>
             </div>
         </div>
@@ -30,6 +30,11 @@ export default {
             username:"",
             name:"",
             mode:"",
+        }
+    },
+    methods:{
+        back(){
+            this.$router.go(-1)
         }
     },
     mounted() {

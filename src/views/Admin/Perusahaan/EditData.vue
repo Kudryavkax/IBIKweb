@@ -51,7 +51,7 @@
                 </template>
             </b-table>
             <div class="buttongroup">
-                <b-button variant="outline-secondary" to="/admin/perusahaan/data/">Batal</b-button>
+                <b-button variant="outline-secondary" @click="back">Batal</b-button>
                 <b-button variant="outline-secondary" >Edit Perusahaan</b-button>
             </div>
         </div>
@@ -88,7 +88,12 @@ export default {
             telepon:null,
             email:null,
         }
-    }
+    },
+    methods:{
+        back(){
+            this.$router.go(-1)
+        }
+    },
 }
 </script>
 

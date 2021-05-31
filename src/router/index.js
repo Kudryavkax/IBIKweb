@@ -9,7 +9,7 @@ const routes = [
         component: () => import('../views/Default'),
         children: [{
             path: "",
-            redirect: "home"
+            redirect: "home/"
         },
         {
             path: 'home',
@@ -264,15 +264,15 @@ const routes = [
         },
         {
             path: 'lowongan',
-            component: () => import('../views/Asisten/Lowongan/Lowongan'),
+            component: () => import('../views/Admin/Lowongan/Lowongan'),
         },
         {
             path: 'lowongan/add',
-            component: () => import('../views/Asisten/Lowongan/InputLowongan'),
+            component: () => import('../views/Admin/Lowongan/InputLowongan'),
         },
         {
             path: 'lowongan/edit/:id',
-            component: () => import('../views/Asisten/Lowongan/InputLowongan'),
+            component: () => import('../views/Admin/Lowongan/InputLowongan'),
         },
         {
             path: 'absen',
@@ -296,19 +296,19 @@ const routes = [
         },
         {
             path: 'perusahaan/data/add',
-            component: () => import('../views/Asisten/Perusahaan/InputData'),
+            component: () => import('../views/Admin/Perusahaan/InputData'),
         },
         {
             path: 'perusahaan/data/edit/:id',
-            component: () => import('../views/Asisten/Perusahaan/EditData'),
+            component: () => import('../views/Admin/Perusahaan/EditData'),
         },
         {
             path: 'perusahaan/data/moaadd/:id',
-            component: () => import('../views/Asisten/Perusahaan/InputMoa'),
+            component: () => import('../views/Admin/Perusahaan/InputMoa'),
         },
         {
             path: 'perusahaan/data/moaedit/:id',
-            component: () => import('../views/Asisten/Perusahaan/InputMoa'),
+            component: () => import('../views/Admin/Perusahaan/InputMoa'),
         },
         {
             path: 'internship',
@@ -427,11 +427,11 @@ const routes = [
         },
         {
             path: 'lowongan/add',
-            component: () => import('../views/Perusahaan/Lowongan/InputLowongan'),
+            component: () => import('../views/Admin/Lowongan/InputLowongan'),
         },
         {
             path: 'lowongan/edit/:id',
-            component: () => import('../views/Perusahaan/Lowongan/InputLowongan'),
+            component: () => import('../views/Admin/Lowongan/InputLowongan'),
         },
         {
             path: 'lowongan/data/:id',

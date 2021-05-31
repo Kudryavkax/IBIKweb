@@ -6,8 +6,8 @@
         </div>
         <div class="table">
             <div class="btngroup">
-                <b-btn class="btnadd my-1" to="absen/add">Tambah Absen <b-icon-plus-circle-fill></b-icon-plus-circle-fill></b-btn>
-                <b-btn class="btn m-1" to="absen/cetak">Cetak Absen</b-btn>
+                <b-btn class="btnadd my-1" to="add">Tambah Absen <b-icon-plus-circle-fill></b-icon-plus-circle-fill></b-btn>
+                <b-btn class="btn m-1" to="cetak">Cetak Absen</b-btn>
             </div>
             <b-table hover 
                 head-variant="light"
@@ -17,7 +17,7 @@
                     {{row.index+1}}
                 </template>
                 <template #cell(Perintah)="row">
-                    <b-button size="sm" class="m-1" :to='"absen/edit/"+row.item.Key'>
+                    <b-button size="sm" class="m-1" :to='"edit/"+row.item.Key'>
                     Edit
                     </b-button>
                     <b-button size="sm" class="m-1" >

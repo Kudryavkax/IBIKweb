@@ -22,7 +22,7 @@
             <label>Deskripsi :</label>
             <b-form-textarea v-model="desc" placeholder="Masukan Deskripsi" rows="4"></b-form-textarea>
             <div class="buttongroup">
-                <b-button variant="outline-secondary" to="/asisten/absen">Batal</b-button>
+                <b-button variant="outline-secondary" @click="back">Batal</b-button>
                 <b-button variant="outline-secondary" >{{mode}} Absen</b-button>
             </div>
         </div>
@@ -45,6 +45,11 @@ export default {
             houroptions:[7,8,9,10,11,12,13,14,15,16,17,18],
             minoptions:[0,15,30,45],
             mode:null
+        }
+    },
+    methods:{
+        back(){
+            this.$router.go(-1)
         }
     },
     mounted() {

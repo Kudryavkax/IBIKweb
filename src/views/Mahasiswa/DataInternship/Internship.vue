@@ -73,6 +73,9 @@ export default {
                 status:"Belum"}
             ]
         }
+    },
+    created(){
+        this.$router.push('#')
     }
 }
 </script>

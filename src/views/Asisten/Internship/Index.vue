@@ -2,7 +2,7 @@
     <div class="IndexInternship-contain">
         <div class="Navselect">
             <b-nav tabs>
-                <b-nav-item to="input">Input data Internship Mahasiswa</b-nav-item>
+                <b-nav-item to="/asisten/internship/input">Input data Internship Mahasiswa</b-nav-item>
                 <b-nav-item to="/asisten/internship/datalowongan">Ubah Status Pendaftaran Internship</b-nav-item>
             </b-nav>
         </div>

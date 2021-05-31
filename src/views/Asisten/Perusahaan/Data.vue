@@ -11,14 +11,17 @@
                         <b-col sm="2">
                         <label for="input-nama">Cari Perusahaan:</label>
                         </b-col>
-                        <b-col sm="8">
+                        <b-col sm="6">
                         <b-form-input id="input-nama"></b-form-input>
                         </b-col>
-                        <b-col>
+                        <b-col sm="1">
                         <b-btn class="btnsearch">Search</b-btn>
                         </b-col>
+                        <b-col sm="1">
+                        <b-btn class="btnadd" to="add"><b-icon icon="plus-circle-fill"></b-icon></b-btn>
+                        </b-col>
                         <b-col>
-                        <b-btn class="btnadd" to="data/add"><b-icon icon="plus-circle-fill"></b-icon></b-btn>
+                        <b-btn class="btndownload">Download Rekap</b-btn>
                         </b-col>
                     </b-row>
                 </b-container>
@@ -34,15 +37,15 @@
                     {{row.item.tanggalawal}} <br> s/d <br> {{row.item.tanggalakhir}}
                 </template>
                 <template #cell(Perintah)="row">
-                    <b-button size="sm" class="mr-1" :to='"data/edit/"+row.item.Key'>
+                    <b-button size="sm" class="mr-1" :to='"edit/"+row.item.Key'>
                     Edit
                     </b-button>
                 </template>
                 <template #cell(MoA)="row">
                     <b-dropdown id="dropdown-1" text="Perintah" class="m-md-2">
                         <b-dropdown-item>Download</b-dropdown-item>
-                        <b-dropdown-item :to='"data/moaadd/"+row.item.Key'>Tambah</b-dropdown-item>
-                        <b-dropdown-item :to='"data/moaedit/"+row.item.Key'>Edit</b-dropdown-item>
+                        <b-dropdown-item :to='"moaadd/"+row.item.Key'>Tambah</b-dropdown-item>
+                        <b-dropdown-item :to='"moaedit/"+row.item.Key'>Edit</b-dropdown-item>
                     </b-dropdown>
                 </template>
             </b-table>

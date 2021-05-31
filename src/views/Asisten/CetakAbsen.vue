@@ -20,7 +20,7 @@
             :date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }"
             ></b-form-datepicker>
             <div class="buttongroup">
-                <b-button variant="outline-secondary" to="/asisten/absen">Batal</b-button>
+                <b-button variant="outline-secondary" @click="back">Batal</b-button>
                 <b-button variant="outline-secondary" >Download</b-button>
             </div>
         </div>
@@ -37,6 +37,11 @@ export default {
         return{
             start:null,
             end:null
+        }
+    },
+    methods:{
+        back(){
+            this.$router.go(-1)
         }
     },
 }

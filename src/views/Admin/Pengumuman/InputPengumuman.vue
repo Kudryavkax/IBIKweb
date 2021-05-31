@@ -18,7 +18,7 @@
             drop-placeholder="Drop file here..."
             ></b-form-file>
             <div class="buttongroup">
-                <b-button variant="outline-secondary" to="/admin/pengumuman/">Batal</b-button>
+                <b-button variant="outline-secondary" @click="back">Batal</b-button>
                 <b-button variant="outline-secondary" >{{mode}} Pengumuman</b-button>
             </div>
         </div>
@@ -37,6 +37,11 @@ export default {
             text:"",
             mode:"",
             file1:null
+        }
+    },
+    methods:{
+        back(){
+            this.$router.go(-1)
         }
     },
     mounted() {

@@ -1,7 +1,7 @@
 <template>
     <div class="navibar">
       <b-navbar toggleable="lg" class="navibar-top" type="light" variant="dark">
-        <b-navbar-brand class="fti-logo" to="/asisten">
+        <b-navbar-brand class="fti-logo" to="/asisten/">
         <img src="@/assets/logo.webp" alt="">
         </b-navbar-brand>
         <b-nav-toggle target="nav-content"></b-nav-toggle>
@@ -13,8 +13,8 @@
             </b-nav-item-dropdown>
             <b-nav-item class="btn" to="/asisten/lowongan/">LOWONGAN</b-nav-item>
             <b-nav-item-dropdown class="btn" text="ASISTEN" right>
-              <b-dropdown-item to="/asisten/absen">Absensi</b-dropdown-item>
-              <b-dropdown-item to="/asisten/perusahaan/data">Data Perusahaan</b-dropdown-item>
+              <b-dropdown-item to="/asisten/absen/">Absensi</b-dropdown-item>
+              <b-dropdown-item to="/asisten/perusahaan/data/">Data Perusahaan</b-dropdown-item>
               <b-dropdown-item to="/asisten/internship/">Data Internship</b-dropdown-item>
             </b-nav-item-dropdown>
             <b-nav-item-dropdown class="btn" text="USER" right>
