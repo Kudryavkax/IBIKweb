@@ -22,6 +22,22 @@ const routes = [
         {
             path: 'daftar',
             component: () => import('../views/Register/DaftarPer'),
+        },
+        {
+            path: 'pengumuman',
+            component: () => import('../views/Home/ListPengumuman'),
+        },
+        {
+            path: 'pengumuman/:id',
+            component: () => import('../views/Home/DetailPengumuman'),
+        },
+        {
+            path: 'lowongan',
+            component: () => import('../views/Home/ListLowongan'),
+        },
+        {
+            path: 'lowongan/:id',
+            component: () => import('../views/Home/DetailLowongan'),
         },]
         
     },
@@ -44,32 +60,6 @@ const routes = [
         {
             path: 'perusahaan',
             component: () => import('../views/Login/LoginPerusahaan'),
-        },]
-    },
-
-    {
-        path: '/pengumuman',
-        component: () => import('../views/Default'),
-        children: [{
-            path: '',
-            component: () => import('../views/Home/ListPengumuman'),
-        },
-        {
-            path: ':id',
-            component: () => import('../views/Home/DetailPengumuman'),
-        },]
-    },
-
-    {
-        path: '/lowongan',
-        component: () => import('../views/Default'),
-        children: [{
-            path: '',
-            component: () => import('../views/Home/ListLowongan'),
-        },
-        {
-            path: ':id',
-            component: () => import('../views/Home/DetailLowongan'),
         },]
     },
 

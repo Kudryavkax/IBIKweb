@@ -13,42 +13,18 @@
         </div>
         <div class="listpengumuman">
           <b-card-group deck>
-            <b-card img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top>
+            <b-card img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top v-for="item in pengumumanitems" :key="item.key">
               <b-card-text>
-                <b-button class="link" variant="link" to="/pengumuman/1">Webinar IDStar "Moving towards Society 5.0"</b-button>
+                <b-button class="link" variant="link" :to='"/pengumuman/"+item.key'>{{item.judul}}</b-button>
               </b-card-text>
               <template #footer>
-                <small class="text-muted">31 Oktober 2020</small>
-              </template>
-            </b-card>
-            <b-card img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top>
-              <b-card-text>
-                Virtual Campus Tour ruparupa.com
-              </b-card-text>
-              <template #footer>
-                <small class="text-muted">31 Oktober 2020</small>
-              </template>
-            </b-card>
-            <b-card img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top>
-              <b-card-text>
-                Webinar BCA "Beyond the Foundation of ITBCA Services"
-              </b-card-text>
-              <template #footer>
-                <small class="text-muted">15 Oktober 2020</small>
-              </template>
-            </b-card>
-            <b-card img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top>
-              <b-card-text>
-                Webinar BCA " Digital Innovation Solution at IT BCA"
-              </b-card-text>
-              <template #footer>
-                <small class="text-muted">22 September 2020</small>
+                <small class="text-muted">{{item.tanggal}}</small>
               </template>
             </b-card>
           </b-card-group>
         </div>
         <div class="more">
-          <b-button class="link" variant="link" to="/pengumuman">Pengumuman Sebelumnya >></b-button>
+          <b-button class="link" variant="link" to="/pengumuman/">Pengumuman Sebelumnya >></b-button>
         </div>
       </div>
       <div class="Lowongan">
@@ -58,7 +34,7 @@
         </div>
         <div class="tablelowongan">
           <b-card-group deck>
-            <b-card img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top v-for="item in items" :key="item.key">
+            <b-card img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top v-for="item in lowonganitems" :key="item.key">
               <b-card-text>
                 <b-button class="link" variant="link" :to='/lowongan/+item.key' >{{item.JudulLowongan}}</b-button>
                 {{item.NamaPerusahaan}}
@@ -69,7 +45,7 @@
             </b-card>
           </b-card-group>
           <div class="more">
-            <b-button class="link" variant="link" to="/lowongan">Lowongan lainnya >></b-button>
+            <b-button class="link" variant="link" to="/lowongan/">Lowongan lainnya >></b-button>
           </div>
         </div>
       </div>
@@ -84,7 +60,7 @@ export default {
     },
     data() {
       return {
-        items: [
+        lowonganitems: [
           { key:1,
             JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INTERNSHIP', 
             NamaPerusahaan: 'PT Dynamics Inovasi Solusindo', 
@@ -101,6 +77,20 @@ export default {
             JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INTERNSHIP', 
             NamaPerusahaan: 'PT Dynamics Inovasi Solusindo', 
             DurasiInternship: '12 Bulan Full Time' },
+        ],
+        pengumumanitems: [
+          { key:1,
+            judul: 'Virtual Campus Tour ruparupa.com', 
+            tanggal: '31 Oktober 2020'},
+          { key:2,
+            judul: 'Virtual Campus Tour ruparupa.com', 
+            tanggal: '31 Oktober 2020'},
+          { key:3,
+            judul: 'Virtual Campus Tour ruparupa.com', 
+            tanggal: '31 Oktober 2020'},
+          { key:4,
+            judul: 'Virtual Campus Tour ruparupa.com', 
+            tanggal: '31 Oktober 2020'},
         ],
       }
     }

@@ -1,7 +1,7 @@
 <template>
   <div class="index">
       <div class="page-container">
-          <navbar></navbar>
+          <navbar :type="'Asisten'"></navbar>
           <router-view class="body-container"></router-view>
           <footing></footing>
       </div>
@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import navbar from "@/components/NavbarAsisten"
+import navbar from "@/components/Navbar"
 import footing from '@/components/Footer'
 
 export default {
