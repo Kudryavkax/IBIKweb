@@ -24,6 +24,10 @@
             head-variant="light"
             :fields="fields"
             :items="items">
+            <template #cell(JudulPengumuman)="row" >
+                <b-button class="link" variant="link" :to='""+row.item.Key'>
+                {{row.item.JudulPengumuman}}</b-button>
+            </template>
           </b-table>
         </div>
     </div>

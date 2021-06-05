@@ -24,6 +24,10 @@
             head-variant="light"
             :fields="fields"
             :items="items">
+            <template #cell(JudulLowongan)="row" >
+                <b-button class="link" variant="link" :to='""+row.item.key'>
+                {{row.item.JudulLowongan}}</b-button>
+            </template>
           </b-table>
         </div>
     </div>
@@ -39,16 +43,20 @@ export default {
       return {
         fields: ['JudulLowongan', 'NamaPerusahaan', 'DurasiInternship'],
         items: [
-          { JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INSTERNSHIP', 
+          { key:1,
+            JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INSTERNSHIP', 
             NamaPerusahaan: 'PT Dynamics Inovasi Solusindo', 
             DurasiInternship: '12 Bulan Full Time' },
-          { JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INSTERNSHIP', 
+          { key:2,
+            JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INSTERNSHIP', 
             NamaPerusahaan: 'PT Dynamics Inovasi Solusindo', 
             DurasiInternship: '12 Bulan Full Time' },
-          { JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INSTERNSHIP', 
+          { key:3,
+            JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INSTERNSHIP', 
             NamaPerusahaan: 'PT Dynamics Inovasi Solusindo', 
             DurasiInternship: '12 Bulan Full Time' },
-          { JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INSTERNSHIP', 
+          { key:4,
+            JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INSTERNSHIP', 
             NamaPerusahaan: 'PT Dynamics Inovasi Solusindo', 
             DurasiInternship: '12 Bulan Full Time' },
         ],
