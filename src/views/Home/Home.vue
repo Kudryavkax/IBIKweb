@@ -13,9 +13,9 @@
         </div>
         <div class="listpengumuman">
           <b-card-group deck>
-            <b-card img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top v-for="item in pengumumanitems" :key="item.key">
+            <b-card img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top v-for="item in Pengumumanitems" :key="item.noP">
               <b-card-text>
-                <b-button class="link" variant="link" :to='"/pengumuman/"+item.key'>{{item.judul}}</b-button>
+                <b-button class="link" variant="link" :to='"/pengumuman/"+item.noP'>{{item.judul}}</b-button>
               </b-card-text>
               <template #footer>
                 <small class="text-muted">{{item.tanggal}}</small>
@@ -34,13 +34,14 @@
         </div>
         <div class="tablelowongan">
           <b-card-group deck>
-            <b-card img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top v-for="item in lowonganitems" :key="item.key">
+            <b-card img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top v-for="item in Lowonganitems" :key="item.kodelowongan">
               <b-card-text>
-                <b-button class="link" variant="link" :to='/lowongan/+item.key' >{{item.JudulLowongan}}</b-button>
-                {{item.NamaPerusahaan}}
+                <b-button class="link" variant="link" :to='/lowongan/+item.kodelowongan' >{{item.judul}}</b-button><br>
+                <label >{{item.namapt}}</label>
               </b-card-text>
               <template #footer>
-                <small class="text-muted">{{item.DurasiInternship}}</small>
+                <small class="text-muted" v-if="item.opsi_full == 1">{{item.opsi_bulan}} Bulan Full Time</small>
+                <small class="text-muted" v-else>{{item.opsi_bulan}} Bulan Part Time</small>
               </template>
             </b-card>
           </b-card-group>
@@ -53,6 +54,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
     name: "Home",
     components: {
@@ -60,39 +62,34 @@ export default {
     },
     data() {
       return {
-        lowonganitems: [
-          { key:1,
-            JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INTERNSHIP', 
-            NamaPerusahaan: 'PT Dynamics Inovasi Solusindo', 
-            DurasiInternship: '12 Bulan Full Time' },
-          { key:2,
-            JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INTERNSHIP', 
-            NamaPerusahaan: 'PT Dynamics Inovasi Solusindo', 
-            DurasiInternship: '12 Bulan Full Time' },
-          { key:3,
-            JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INTERNSHIP', 
-            NamaPerusahaan: 'PT Dynamics Inovasi Solusindo', 
-            DurasiInternship: '12 Bulan Full Time' },
-          { key:4,
-            JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INTERNSHIP', 
-            NamaPerusahaan: 'PT Dynamics Inovasi Solusindo', 
-            DurasiInternship: '12 Bulan Full Time' },
-        ],
-        pengumumanitems: [
-          { key:1,
-            judul: 'Virtual Campus Tour ruparupa.com', 
-            tanggal: '31 Oktober 2020'},
-          { key:2,
-            judul: 'Virtual Campus Tour ruparupa.com', 
-            tanggal: '31 Oktober 2020'},
-          { key:3,
-            judul: 'Virtual Campus Tour ruparupa.com', 
-            tanggal: '31 Oktober 2020'},
-          { key:4,
-            judul: 'Virtual Campus Tour ruparupa.com', 
-            tanggal: '31 Oktober 2020'},
-        ],
+        Lowonganitems: [],
+        Pengumumanitems: [],
       }
+    },
+    methods: {
+      // Get All Pengumuman
+      async getPengumuman() {
+        try {
+          const response = await axios.get("http://localhost:5000/pengumuman");
+          this.Pengumumanitems = response.data;
+          console.log(response.data);
+        } catch (err) {
+          console.log(err);
+        }
+      },
+      // Get All Lowongan
+      async getLowongan() {
+        try {
+          const response = await axios.get("http://localhost:5000/lowongan");
+          this.Lowonganitems = response.data;
+        } catch (err) {
+          console.log(err);
+        }
+      },
+    },
+    created() {
+      this.getPengumuman();
+      this.getLowongan();
     }
 }
 </script>
