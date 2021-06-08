@@ -8,7 +8,7 @@
           <div class="search">
             <b-container fluid>
               <b-row class="my-1">
-                <b-col sm="2">
+                <b-col>
                   <label for="input-nama">Cari Pengumuman :</label>
                 </b-col>
                 <b-col sm="8">
@@ -25,8 +25,8 @@
             :fields="fields"
             :items="items">
             <template #cell(JudulPengumuman)="row" >
-                <b-button class="link" variant="link" :to='""+row.item.Key'>
-                {{row.item.JudulPengumuman}}</b-button>
+                <b-button class="link" variant="link" :to='""+row.item.noP'>
+                {{row.item.judul}}</b-button>
             </template>
           </b-table>
         </div>
@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
     name: "Pengumuman",
     components: {
@@ -41,23 +42,29 @@ export default {
     },
     data() {
       return {
-        fields: ['JudulPengumuman', 'Tanggal'],
-        items: [
-          { Key: 1,
-            JudulPengumuman: 'Webinar IDStar "Moving Towards Society 5.0"', 
-            Tanggal: '31 Oktober 2020'},
-          { Key: 2,
-            JudulPengumuman: 'Webinar IDStar "Moving Towards Society 5.0"', 
-            Tanggal: '31 Oktober 2020'},
-          { Key: 3,
-            JudulPengumuman: 'Webinar IDStar "Moving Towards Society 5.0"', 
-            Tanggal: '31 Oktober 2020'},
-          { Key: 4,
-            JudulPengumuman: 'Webinar IDStar "Moving Towards Society 5.0"', 
-            Tanggal: '31 Oktober 2020'},
-        ],
+        fields: ['JudulPengumuman', 'tanggal'],
+        items: [],
       }
     },
+    methods: {
+      // Get All Pengumuman
+      async getPengumuman() {
+        try {
+          const response = await axios.get("http://localhost:5000/pengumuman");
+          this.items = response.data;
+          for (let index = 0; index < this.items.length; index++) {
+          this.items[index].tanggal = this.items[index].tanggal.substring(0,10);
+            
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      },
+
+    },
+    created(){
+      this.getPengumuman();
+    }
 }
 </script>
 

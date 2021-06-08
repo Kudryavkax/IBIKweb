@@ -40,7 +40,7 @@
                 <label >{{item.namapt}}</label>
               </b-card-text>
               <template #footer>
-                <small class="text-muted" v-if="item.opsi_full == 1">{{item.opsi_bulan}} Bulan Full Time</small>
+                <small class="text-muted" v-if="item.opsi_full == '1'">{{item.opsi_bulan}} Bulan Full Time</small>
                 <small class="text-muted" v-else>{{item.opsi_bulan}} Bulan Part Time</small>
               </template>
             </b-card>
@@ -72,7 +72,11 @@ export default {
         try {
           const response = await axios.get("http://localhost:5000/pengumuman");
           this.Pengumumanitems = response.data;
-          console.log(response.data);
+          this.Pengumumanitems = this.Pengumumanitems.slice(0,4);
+          for (let index = 0; index < this.Pengumumanitems.length; index++) {
+          this.Pengumumanitems[index].tanggal = this.Pengumumanitems[index].tanggal.substring(0,10);
+            
+          }
         } catch (err) {
           console.log(err);
         }
@@ -82,6 +86,7 @@ export default {
         try {
           const response = await axios.get("http://localhost:5000/lowongan");
           this.Lowonganitems = response.data;
+          this.Lowonganitems = this.Lowonganitems.slice(0,4);
         } catch (err) {
           console.log(err);
         }

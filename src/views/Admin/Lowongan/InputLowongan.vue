@@ -8,38 +8,39 @@
             <label>Judul Lowongan :</label>
             <b-form-input v-model="judul" placeholder="Masukan Judul"></b-form-input>
             <label>Detail Lowongan :</label>
-            <b-form-textarea v-model="text" placeholder="Masukan Deskripsi" rows="4"></b-form-textarea>
+            <b-form-textarea v-model="deskripsi" placeholder="Masukan Deskripsi" rows="4"></b-form-textarea>
             <label>Perusahaan :</label>
-            <v-select class="dropdown" v-model="perusahaan" :options="options"></v-select>
+            <v-select class="dropdown" v-model="kodept" :options="options"></v-select>
             <label>Durasi Internship :</label>
             <b-form-radio-group
-                v-model="durasi"
+                v-model="opsi_bulan"
                 :options="durasioptions"
                 class="radio-inline"
             ></b-form-radio-group>
             <label>Part/Full Time Internship :</label>
             <b-form-radio-group
-                v-model="tipe"
+                v-model="opsi_full"
                 :options="tipeoptions"
                 class="radio-inline"
             ></b-form-radio-group>
             <label>File Lowongan :</label>
             <b-form-file
             class="fileform"
-            v-model="file1"
-            :state="Boolean(file1)"
+            v-model="nmfile"
+            :state="Boolean(nmfile)"
             placeholder="Choose a file or drop it here..."
             drop-placeholder="Drop file here..."
             ></b-form-file>
             <div class="buttongroup">
                 <b-button variant="outline-secondary" @click="back">Batal</b-button>
-                <b-button variant="outline-secondary" >{{mode}} Lowongan</b-button>
+                <b-button variant="outline-secondary" @click="saveLowongan">{{mode}} Lowongan</b-button>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import axios from "axios";
 export default {
     name: "Inputlowongan",
     components: {
@@ -47,33 +48,94 @@ export default {
     data(){
         return{
             judul:"",
-            text:"",
+            deskripsi:"",
             mode:"",
-            file1:null,
-            perusahaan:null,
-            tipe:null,
-            durasi:null,
+            nmfile:null,
+            kodept:null,
+            opsi_bulan:null,
+            opsi_full:null,
             durasioptions:[
-                "3 Bulan",
-                "6 Bulan",
-                "9 Bulan",
-                "12 Bulan",
+                {text:"3 Bulan", value:3},
+                {text:"6 Bulan", value:6},
+                {text:"9 Bulan", value:9},
+                {text:"12 Bulan", value:12},
             ],
             tipeoptions:[
-                "Part Time",
-                "Full Time"
+                {text:"Part Time", value:0},
+                {text:"Full Time", value:1}
             ],
             options:[
-                "PT ",
-                "applebee",
-                "applebecause"
+                {label:"BCA", id:1},
+                {label:"applebee", id:2},
+                {label:"applebecause", id:3},
             ],
         }
     },
     methods:{
         back(){
             this.$router.go(-1)
-        }
+        },
+        // Get All Lowongan
+        async getLowonganById() {
+            try {
+            const response = await axios.get(`http://localhost:5000/lowongan/${this.$route.params.id}`);
+            this.judul = response.data.judul;
+            this.deskripsi = response.data.deskripsi;
+            this.nmfile = response.data.nmfile;
+            this.kodept = response.data.kodept;
+            this.opsi_bulan = response.data.opsi_bulan;
+            this.opsi_full = response.data.opsi_full;
+            } catch (err) {
+            console.log(err);
+            }
+        },
+        // Update Lowongan
+        async saveLowongan() {
+            if(this.mode == 'Tambah')
+                try {
+                    await axios.post("http://localhost:5000/lowongan", {
+                    judul: this.judul,
+                    deskripsi: this.deskripsi,
+                    nmfile: this.nmfile,
+                    kodept: this.kodept,
+                    opsi_bulan: this.opsi_bulan,
+                    opsi_full: this.opsi_full,
+                    periode: '202122A',
+                    });
+                    this.judul = null;
+                    this.deskripsi = null;
+                    this.nmfile = null;
+                    this.kodept = null;
+                    this.opsi_bulan = null;
+                    this.opsi_full = null;
+                    this.$router.go(-1);
+                } catch (err) {
+                    console.log(err);
+                }
+            else
+                try {
+                    await axios.put(
+                    `http://localhost:5000/pengumuman/${this.$route.params.id}`,
+                    {
+                    judul: this.judul,
+                    deskripsi: this.deskripsi,
+                    nmfile: this.nmfile,
+                    kodept: this.kodept,
+                    opsi_bulan: this.opsi_bulan,
+                    opsi_full: this.opsi_full,
+                    }
+                    );
+                    this.judul='';
+                    this.isi='';
+                    this.nmfile=null;
+                    this.kodept = null;
+                    this.opsi_bulan = null;
+                    this.opsi_full = null;
+                    this.$router.go(-1);
+                } catch (err) {
+                    console.log(err);
+                }
+        },
     },
     mounted() {
         this.mode=window.location.hash.substring(window.location.hash.lastIndexOf('/')+1);
@@ -81,6 +143,11 @@ export default {
             this.mode="Tambah";
         }else{
             this.mode="Edit"
+        }
+    },
+    created(){
+        if (this.$route.params != null){
+            this.getLowonganById();
         }
     }
 }

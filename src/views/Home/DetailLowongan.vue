@@ -1,14 +1,15 @@
 <template>
   <div class="lowongan">
       <h2 class="title">
-          CRM FUNCTIONAL CONSULTANT INTERNSHIP
+        {{item.judul}}
       </h2>
       <div class="lowonganbody">
           <div class="textbody">
-            <p class="isi" v-html="'Periode:<br>'+periode" />
-            <p class="isi" v-html="'Deskripsi:<br>'+isitext" />
-            <p class="isi" v-html="'Perusahaan:<br>'+perusahaan" />
-            <p class="isi" v-html="'Durasi Internship:<br>'+durasi+'<br>'+jenis" />
+            <p class="isi" v-html="'Periode:<br>'+item.namaperiode" />
+            <p class="isi" v-html="'Deskripsi:<br>'+item.deskripsi" />
+            <p class="isi" v-html="'Perusahaan:<br>'+item.namapt" />
+            <p class="isi" v-if="item.opsi_full == 1" v-html="'Durasi Internship:<br>'+item.opsi_bulan+' Bulan<br>Full Time'" />
+            <p class="isi" v-else v-html="'Durasi Internship:<br>'+item.opsi_bulan+' Bulan<br>Part Time'" />
           </div>
           <img :src="gambar">
       </div>
@@ -16,6 +17,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
     name: "DetailLowongan",
     components: {
@@ -23,14 +25,26 @@ export default {
     },
     data() {
         return{
-            periode:"Ganjil 2020/2021",
-            perusahaan:"PT Dynamics Inovasi Solusindo",
-            durasi:"12 Bulan",
-            jenis:"Full Time",
+            item:{},
             gambar:"http://ibik.fti.untar.ac.id/downfilelowongan.php?lw=10&nm=10-CRM+Functional+Consultant+Internship.JPG",
-            isitext:"Hari/Tanggal: 9-11 November 2020<br>Waktu :13.00 - 17.30<br>Tempat : Zoom Meeting"
         }
     },
+    methods: {
+      // Get All Pengumuman
+      async getLowonganById() {
+        try {
+          const response = await axios.get(`http://localhost:5000/lowongan/${this.$route.params.id}`);
+          this.item = response.data;
+          this.item.tanggal = this.item.tanggal.substring(0,10);
+        } catch (err) {
+          console.log(err);
+        }
+      },
+
+    },
+    created(){
+      this.getLowonganById();
+    }
 }
 </script>
 

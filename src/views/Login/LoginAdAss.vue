@@ -7,7 +7,7 @@
         <div class="input">
             <b-container fluid>
                 <b-row class="mt-3">
-                    <b-col sm="3">
+                    <b-col sm="4">
                     <label for="input-username">Username :</label>
                     </b-col>
                     <b-col>
@@ -15,7 +15,7 @@
                     </b-col>
                 </b-row>
                 <b-row class="mt-3">
-                    <b-col sm="3">
+                    <b-col sm="4">
                     <label for="input-password">Password :</label>
                     </b-col>
                     <b-col>

@@ -8,7 +8,7 @@
           <div class="search">
             <b-container fluid>
               <b-row class="my-1">
-                <b-col sm="2">
+                <b-col>
                   <label for="input-nama">Cari Pengumuman:</label>
                 </b-col>
                 <b-col sm="8">
@@ -28,10 +28,10 @@
             :fields="fields"
             :items="items">
             <template #cell(Perintah)="row">
-                <b-button size="sm" class="mr-1" :to='"edit/"+row.item.Key'>
+                <b-button size="sm" class="mr-1" :to='"edit/"+row.item.noP'>
                 Edit
                 </b-button>
-                <b-button size="sm">
+                <b-button size="sm" @click="deletePengumuman(row.item.noP)">
                 Delete
                 </b-button>
             </template>
@@ -41,6 +41,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
     name: "Pengumuman",
     components: {
@@ -48,23 +49,37 @@ export default {
     },
     data() {
       return {
-        fields: ['JudulPengumuman', 'Tanggal','Perintah'],
-        items: [
-          { Key: 1,
-            JudulPengumuman: 'Webinar IDStar "Moving Towards Society 5.0"', 
-            Tanggal: '31 Oktober 2020'},
-          { Key: 2,
-            JudulPengumuman: 'Webinar IDStar "Moving Towards Society 5.0"', 
-            Tanggal: '31 Oktober 2020'},
-          { Key: 3,
-            JudulPengumuman: 'Webinar IDStar "Moving Towards Society 5.0"', 
-            Tanggal: '31 Oktober 2020'},
-          { Key: 4,
-            JudulPengumuman: 'Webinar IDStar "Moving Towards Society 5.0"', 
-            Tanggal: '31 Oktober 2020'},
-        ],
+        fields: [{key:'judul', label:'Judul Pengumuman'}, 'tanggal','Perintah'],
+        items: [],
       }
     },
+    methods: {
+      // Get All Pengumuman
+      async getPengumuman() {
+        try {
+          const response = await axios.get("http://localhost:5000/pengumuman");
+          this.items = response.data;
+          for (let index = 0; index < this.items.length; index++) {
+          this.items[index].tanggal = this.items[index].tanggal.substring(0,10);
+            
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      },
+      // Delete Pengumuman
+      async deletePengumuman(id) {
+        try {
+          await axios.delete(`http://localhost:5000/pengumuman/${id}`);
+          this.getPengumuman();
+        } catch (err) {
+          console.log(err);
+        }
+      },
+    },
+    created(){
+      this.getPengumuman();
+    }
 }
 </script>
 

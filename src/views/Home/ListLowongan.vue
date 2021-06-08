@@ -8,7 +8,7 @@
           <div class="search">
             <b-container fluid>
               <b-row class="my-1">
-                <b-col sm="2">
+                <b-col>
                   <label for="input-nama">Cari Lowongan :</label>
                 </b-col>
                 <b-col sm="8">
@@ -25,8 +25,12 @@
             :fields="fields"
             :items="items">
             <template #cell(JudulLowongan)="row" >
-                <b-button class="link" variant="link" :to='""+row.item.key'>
-                {{row.item.JudulLowongan}}</b-button>
+                <b-button class="link" variant="link" :to='""+row.item.kodelowongan'>
+                {{row.item.judul}}</b-button>
+            </template>
+            <template #cell(DurasiInternship)="row" >
+                <label v-if="row.item.opsi_full = 1">{{row.item.opsi_bulan}} Bulan Full Time</label>
+                <label v-else>{{row.item.opsi_bulan}} Bulan Part Time</label>
             </template>
           </b-table>
         </div>
@@ -34,6 +38,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
     name: "Lowongan",
     components: {
@@ -41,26 +46,24 @@ export default {
     },
     data() {
       return {
-        fields: ['JudulLowongan', 'NamaPerusahaan', 'DurasiInternship'],
-        items: [
-          { key:1,
-            JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INSTERNSHIP', 
-            NamaPerusahaan: 'PT Dynamics Inovasi Solusindo', 
-            DurasiInternship: '12 Bulan Full Time' },
-          { key:2,
-            JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INSTERNSHIP', 
-            NamaPerusahaan: 'PT Dynamics Inovasi Solusindo', 
-            DurasiInternship: '12 Bulan Full Time' },
-          { key:3,
-            JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INSTERNSHIP', 
-            NamaPerusahaan: 'PT Dynamics Inovasi Solusindo', 
-            DurasiInternship: '12 Bulan Full Time' },
-          { key:4,
-            JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INSTERNSHIP', 
-            NamaPerusahaan: 'PT Dynamics Inovasi Solusindo', 
-            DurasiInternship: '12 Bulan Full Time' },
-        ],
+        fields: ['JudulLowongan', 
+        {key:'namapt', label:'Nama Perusahaan'}, 'DurasiInternship'],
+        items: [],
       }
+    },
+    methods: {
+      // Get All Lowongan
+      async getLowongan() {
+        try {
+          const response = await axios.get("http://localhost:5000/lowongan");
+          this.items = response.data;
+        } catch (err) {
+          console.log(err);
+        }
+      },
+    },
+    created() {
+      this.getLowongan();
     }
 }
 </script>

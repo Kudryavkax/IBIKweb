@@ -27,11 +27,15 @@
             head-variant="light"
             :fields="fields"
             :items="items">
+            <template #cell(DurasiInternship)="row" >
+                <label v-if="row.item.opsi_full = 1">{{row.item.opsi_bulan}} Bulan Full Time</label>
+                <label v-else>{{row.item.opsi_bulan}} Bulan Part Time</label>
+            </template>
             <template #cell(Perintah)="row">
-                <b-button size="sm" class="mr-1" :to='"edit/"+row.item.Key'>
+                <b-button size="sm" class="mr-1" :to='"edit/"+row.item.kodelowongan'>
                 Edit
                 </b-button>
-                <b-button size="sm">
+                <b-button size="sm" @click="deleteLowongan(row.item.kodelowongan)">
                 Delete
                 </b-button>
             </template>
@@ -41,6 +45,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
     name: "lowongan",
     components: {
@@ -48,27 +53,35 @@ export default {
     },
     data() {
       return {
-        fields: ['JudulLowongan', 'NamaPerusahaan', 'DurasiInternship','Perintah'],
-        items: [
-          { Key:1,
-            JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INSTERNSHIP', 
-            NamaPerusahaan: 'PT Dynamics Inovasi Solusindo', 
-            DurasiInternship: '12 Bulan Full Time' },
-          { Key:2,
-            JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INSTERNSHIP', 
-            NamaPerusahaan: 'PT Dynamics Inovasi Solusindo', 
-            DurasiInternship: '12 Bulan Full Time' },
-          { Key:3,
-            JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INSTERNSHIP', 
-            NamaPerusahaan: 'PT Dynamics Inovasi Solusindo', 
-            DurasiInternship: '12 Bulan Full Time' },
-          { Key:4,
-            JudulLowongan: 'CRM FUNCTIONAL CONSULTANT INSTERNSHIP', 
-            NamaPerusahaan: 'PT Dynamics Inovasi Solusindo', 
-            DurasiInternship: '12 Bulan Full Time' },
-        ],
+        fields: [{key:'judul', label:'Judul Lowongan'}, 
+        {key:'namapt', label:'Nama Perusahaan'}, 'DurasiInternship','Perintah'],
+        items: [],
       }
     },
+    methods: {
+      // Get All Lowongan
+      async getLowongan() {
+        try {
+          const response = await axios.get("http://localhost:5000/lowongan");
+          this.items = response.data;
+          console.log(response.data)
+        } catch (err) {
+          console.log(err);
+        }
+      },
+      // Delete Lowongan
+      async deleteLowongan(id) {
+        try {
+          await axios.delete(`http://localhost:5000/lowongan/${id}`);
+          this.getLowongan();
+        } catch (err) {
+          console.log(err);
+        }
+      },
+    },
+    created() {
+      this.getLowongan();
+    }
 }
 </script>
 

@@ -1,11 +1,11 @@
 <template>
   <div class="pengumuman">
       <h2 class="title">
-          Webinar IDStar "Moving towards Society 5.0"
-          <p class="tanggalpost">31 Oktober 2020</p>
+          {{item.judul}}
+          <p class="tanggalpost">{{item.tanggal}}</p>
       </h2>
       <div class="pengumumanbody">
-          <p class="isi" v-html="isitext">
+          <p class="isi" v-html="item.isi">
           </p>
           <img src="http://103.75.25.78/ibikfti/downfilepengumuman.php?nm=28-idstar_society5_p1.jpeg">
       </div>
@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
     name: "Pengumuman",
     components: {
@@ -20,9 +21,25 @@ export default {
     },
     data() {
         return{
-            isitext:"Hari/Tanggal: 9-11 November 2020<br>Waktu :13.00 - 17.30<br>Tempat : Zoom Meeting"
+            item:{}
         }
     },
+    methods: {
+      // Get All Pengumuman
+      async getPengumumanById() {
+        try {
+          const response = await axios.get(`http://localhost:5000/pengumuman/${this.$route.params.id}`);
+          this.item = response.data;
+          this.item.tanggal = this.item.tanggal.substring(0,10);
+        } catch (err) {
+          console.log(err);
+        }
+      },
+
+    },
+    created(){
+      this.getPengumumanById();
+    }
 }
 </script>
 
