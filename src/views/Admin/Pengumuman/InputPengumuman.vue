@@ -62,6 +62,7 @@ export default {
                     judul: this.judul,
                     isi: this.isi,
                     nmfile: this.nmfile,
+                    periode: '202122A'
                     });
                     this.judul='';
                     this.isi='';

@@ -74,7 +74,7 @@ export default {
           this.Pengumumanitems = response.data;
           this.Pengumumanitems = this.Pengumumanitems.slice(0,4);
           for (let index = 0; index < this.Pengumumanitems.length; index++) {
-          this.Pengumumanitems[index].tanggal = this.Pengumumanitems[index].tanggal.substring(0,10);
+            this.Pengumumanitems[index].tanggal = new Date(this.Pengumumanitems[index].tanggal).toLocaleDateString().replace(/\//g, '-');
             
           }
         } catch (err) {

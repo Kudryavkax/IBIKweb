@@ -10,7 +10,7 @@
             <label>Detail Lowongan :</label>
             <b-form-textarea v-model="deskripsi" placeholder="Masukan Deskripsi" rows="4"></b-form-textarea>
             <label>Perusahaan :</label>
-            <v-select class="dropdown" v-model="kodept" :options="options"></v-select>
+            <v-select class="dropdown" v-model="kodept" :options="options" :reduce="label => label.value"></v-select>
             <label>Durasi Internship :</label>
             <b-form-radio-group
                 v-model="opsi_bulan"
@@ -65,9 +65,9 @@ export default {
                 {text:"Full Time", value:1}
             ],
             options:[
-                {label:"BCA", id:1},
-                {label:"applebee", id:2},
-                {label:"applebecause", id:3},
+                {label:"BCA", value:1},
+                {label:"applebee", value:2},
+                {label:"applebecause", value:3},
             ],
         }
     },

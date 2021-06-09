@@ -23,13 +23,14 @@
             <b-form-textarea v-model="desc" placeholder="Masukan Deskripsi" rows="4"></b-form-textarea>
             <div class="buttongroup">
                 <b-button variant="outline-secondary" @click="back">Batal</b-button>
-                <b-button variant="outline-secondary" >{{mode}} Absen</b-button>
+                <b-button variant="outline-secondary" @click="saveAbsen">{{mode}} Absen</b-button>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import axios from "axios";
 export default {
     name: "Inputabsen",
     components: {
@@ -50,7 +51,68 @@ export default {
     methods:{
         back(){
             this.$router.go(-1)
-        }
+        },
+        // Get Absen
+        async getAbsenById() {
+            try {
+            const response = await axios.get(`http://localhost:5000/absen/${this.$route.params.id}/1`);
+            this.tanggal = new Date(response.data.tanggal);
+            this.desc = response.data.kegiatan;
+            var jam_mulai = response.data.jam_mulai.split(':');
+            this.starthour = jam_mulai[0];
+            this.startmin = jam_mulai[1];
+            var jam_selesai = response.data.jam_selesai.split(':');
+            this.endhour = jam_selesai[0];
+            this.endmin = jam_selesai[1];
+            console.log(response.data);
+            } catch (err) {
+            console.log(err);
+            }
+        },
+        // Update Absen
+        async saveAbsen() {
+            if(this.mode == 'Tambah')
+                try {
+                    await axios.post("http://localhost:5000/absen", {
+                    kodeasisten:1,
+                    tanggal: this.tanggal,
+                    kegiatan: this.desc,
+                    jam_mulai: this.starthour+':'+this.startmin+':00',
+                    jam_selesai: this.endhour+':'+this.endmin+':00',
+                    durasi: (Number(this.endhour)-Number(this.starthour))+(Number(this.endmin)-Number(this.startmin))/60,
+                    });
+                    this.tanggal=null;
+                    this.desc=null;
+                    this.starthour=null;
+                    this.startmin=null;
+                    this.endhour=null;
+                    this.endmin=null;
+                    this.$router.go(-1);
+                } catch (err) {
+                    console.log(err);
+                }
+            else
+                try {
+                    await axios.put(
+                    `http://localhost:5000/absen/${this.$route.params.id}`,
+                    {
+                    kegiatan: this.desc,
+                    jam_mulai: this.starthour+':'+this.startmin+':00',
+                    jam_selesai: this.endhour+':'+this.endmin+':00',
+                    durasi: (Number(this.endhour)-Number(this.starthour))+(Number(this.endmin)-Number(this.startmin))/60,
+                    }
+                    );
+                    this.tanggal=null;
+                    this.desc=null;
+                    this.starthour=null;
+                    this.startmin=null;
+                    this.endhour=null;
+                    this.endmin=null;
+                    this.$router.go(-1);
+                } catch (err) {
+                    console.log(err);
+                }
+        },
     },
     mounted() {
         this.mode=window.location.hash.substring(window.location.hash.lastIndexOf('/')+1);
@@ -59,6 +121,9 @@ export default {
         }else{
             this.mode="Edit"
         }
+    },
+    created() {
+      this.getAbsenById();
     }
 }
 </script>

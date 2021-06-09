@@ -53,7 +53,7 @@ export default {
           const response = await axios.get("http://localhost:5000/pengumuman");
           this.items = response.data;
           for (let index = 0; index < this.items.length; index++) {
-          this.items[index].tanggal = this.items[index].tanggal.substring(0,10);
+            this.items[index].tanggal = new Date(this.items[index].tanggal).toLocaleDateString().replace(/\//g, '-');
             
           }
         } catch (err) {

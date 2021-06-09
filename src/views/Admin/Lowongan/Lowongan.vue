@@ -8,7 +8,7 @@
           <div class="search">
             <b-container fluid>
               <b-row class="my-1">
-                <b-col sm="2">
+                <b-col>
                   <label for="input-nama">Cari Lowongan:</label>
                 </b-col>
                 <b-col sm="8">
@@ -28,7 +28,7 @@
             :fields="fields"
             :items="items">
             <template #cell(DurasiInternship)="row" >
-                <label v-if="row.item.opsi_full = 1">{{row.item.opsi_bulan}} Bulan Full Time</label>
+                <label v-if="row.item.opsi_full == 1">{{row.item.opsi_bulan}} Bulan Full Time</label>
                 <label v-else>{{row.item.opsi_bulan}} Bulan Part Time</label>
             </template>
             <template #cell(Perintah)="row">

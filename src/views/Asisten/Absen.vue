@@ -16,11 +16,14 @@
                 <template #cell(No)="row" >
                     {{row.index+1}}
                 </template>
+                <template #cell(Waktu)="row" >
+                    {{row.item.jam_mulai}} - {{row.item.jam_selesai}}
+                </template>
                 <template #cell(Perintah)="row">
-                    <b-button size="sm" class="m-1" :to='"edit/"+row.item.Key'>
+                    <b-button size="sm" class="m-1" :to='"edit/"+row.item.tanggal'>
                     Edit
                     </b-button>
-                    <b-button size="sm" class="m-1" >
+                    <b-button size="sm" class="m-1" @click="deleteabsen(row.item.tanggal)">
                     Hapus
                     </b-button>
                 </template>
@@ -30,6 +33,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
     name: "Absen",
     components: {
@@ -38,16 +42,40 @@ export default {
     data() {
       return {
           fields:[
-              "No", "Tanggal", "Waktu", "Deskripsi", "Perintah"
+              "No", "tanggal", "Waktu", 
+              {key:"kegiatan", label:"Deskripsi"}, "Perintah"
           ],
-          items:[
-              { Key:1,
-                Tanggal:"11 Maret 2020",
-                Waktu:"09.30 - 18.00",
-                Deskripsi:"Menyusun Kepanitiaan EVOS"},
-          ]
+          items:[]
       }
     },
+    methods: {
+      // Get All Absen
+      async getAbsen(id) {
+        try {
+          const response = await axios.get(`http://localhost:5000/absenid/${id}`);
+          this.items = response.data;
+          for (let index = 0; index < this.items.length; index++){
+            this.items[index].tanggal = new Date(this.items[index].tanggal).toLocaleDateString().replace(/\//g, '-');
+            this.items[index].jam_mulai = this.items[index].jam_mulai.substring(0,5);
+            this.items[index].jam_selesai = this.items[index].jam_selesai.substring(0,5);
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      },
+      // Delete Absen
+      async deleteAbsen(id) {
+        try {
+          await axios.delete(`http://localhost:5000/absen/${id}`);
+          this.getAbsen('1');
+        } catch (err) {
+          console.log(err);
+        }
+      },
+    },
+    created() {
+      this.getAbsen('1');
+    }
 }
 </script>
 
