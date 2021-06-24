@@ -14,10 +14,13 @@
             class="fileform"
             v-model="nmfile"
             :state="Boolean(nmfile)"
+            accept="image/*"
             placeholder="Choose a file or drop it here..."
             drop-placeholder="Drop file here..."
             ></b-form-file>
             <div class="buttongroup">
+                <!--<b-button variant="outline-secondary" @click="test">test</b-button>
+                -->
                 <b-button variant="outline-secondary" @click="back">Batal</b-button>
                 <b-button variant="outline-secondary" @click="savePengumuman" >{{mode}} Pengumuman</b-button>
             </div>
@@ -40,6 +43,9 @@ export default {
         }
     },
     methods:{
+        test(){
+            console.log(this.nmfile);
+        },
         back(){
             this.$router.go(-1)
         },
@@ -61,7 +67,7 @@ export default {
                     await axios.post("http://localhost:5000/pengumuman", {
                     judul: this.judul,
                     isi: this.isi,
-                    nmfile: this.nmfile,
+                    nmfile: this.nmfile.name,
                     periode: '202122A'
                     });
                     this.judul='';

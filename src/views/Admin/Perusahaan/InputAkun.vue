@@ -13,7 +13,7 @@
             <b-form-input v-model="name"></b-form-input>
             <div class="buttongroup">
                 <b-button variant="outline-secondary" @click="back">Batal</b-button>
-                <b-button variant="outline-secondary" >{{mode}} Lowongan</b-button>
+                <b-button variant="outline-secondary" >{{mode}} Akun</b-button>
             </div>
         </div>
     </div>

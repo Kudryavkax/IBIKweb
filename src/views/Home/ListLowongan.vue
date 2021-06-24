@@ -29,7 +29,7 @@
                 {{row.item.judul}}</b-button>
             </template>
             <template #cell(DurasiInternship)="row" >
-                <label v-if="row.item.opsi_full = 1">{{row.item.opsi_bulan}} Bulan Full Time</label>
+                <label v-if="row.item.opsi_full == 1">{{row.item.opsi_bulan}} Bulan Full Time</label>
                 <label v-else>{{row.item.opsi_bulan}} Bulan Part Time</label>
             </template>
           </b-table>
